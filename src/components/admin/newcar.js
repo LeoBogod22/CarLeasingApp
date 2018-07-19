@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Label, Input, Row, Col, Alert } from 'reactstrap';
+import { Form, FormGroup, FormControl, Label, Button, Input, Row, Col, Alert } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createCar } from '../../actions/cars';
 import { Link } from 'react-router-dom';
-
+import { CarsRef, timeRef } from './reference';
+import trim from 'trim';
 class NewCar extends Component {
 
   state = {
@@ -34,37 +35,21 @@ class NewCar extends Component {
     alertMsg: false
   }
 
-  handleSubmit = (e) => {
+ onSubmit = (e) => {
     e.preventDefault();
-    this.props.createCar(this.state);
-    this.setState({
-      alertMsg: true,
-      year: '',
-      make: '',
-      model: '',
-      trim: '',
-      engine: '',
-      drive_type: '',
-      body_type: '',
-      ext_color: '',
-      int_color: '',
-      transmission: '',
-      price: 0,
-      sale: 0,
-      status: true,
-      vin: '',
-      link: '',
-      elect_stab: '',
-    	wireless: '',
-    	seat: '',
-    	keyless: '',
-    	trip_comp: '',
-    	tire_pressure: '',
-    	wiper: '',
-    	headlight: ''
-    })
-  }
+   const NewCar= {
+      body_type: this.state.body_type.trim(),
+      checked: false,
+      starred: false,
+      timestamp: timeRef
+    };
+  
 
+  if (NewCar.body_type.length) {
+      CarsRef.push(NewCar);
+      this.setState({ body_type: '' });
+    }
+  };
   alertMsgClose = () => {
     this.setState({ alertMsg: false });
   }
@@ -348,9 +333,11 @@ class NewCar extends Component {
                   </FormGroup>
                 </Col>
                 <Col md="1">
-                  <FormGroup>
-                    <button type="submit" className="btn btn-success">Create</button>
-                  </FormGroup>
+               <form onSubmit={this.onSubmit}>
+ 
+    <form type="text" className="form-control"/>
+    <Button className="btn btn-primary btn-large centerButton" type="submit">Save</Button>
+    </form>
                 </Col>
                 <Col md="1">
                   <FormGroup>

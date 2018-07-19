@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getCars } from './actions/cars';
 import { getMessages } from './actions/message';
-
+import firebase from 'firebase';
 // User Components
 import NavigationBar from './components/user/navigation_bar';
 import TopSearchBar from './components/user/top_search_bar';
@@ -27,6 +27,9 @@ class App extends Component {
     this.props.getCars();
     this.props.getMessages();
   }
+
+ 
+
 
   render() {
     return (

@@ -28,11 +28,6 @@ class Specials extends Component{
   }
 }
 
-function mapStateToProps(state, props){
-  return{
-    cars: state.cars.filter(car => car.sale > 0)
 
-  }
-}
 
-export default connect(mapStateToProps, null)(Specials);
+export default Specials;

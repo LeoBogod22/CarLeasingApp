@@ -31,24 +31,49 @@ class NewCar extends Component {
   	trip_comp: '',
   	tire_pressure: '',
   	wiper: '',
+    id: '',
   	headlight: '',
     alertMsg: false
   }
 
  onSubmit = (e) => {
     e.preventDefault();
+let carid = CarsRef.push().key;
    const NewCar= {
+    id: carid,
       body_type: this.state.body_type.trim(),
-      checked: false,
+      wiper: this.state.wiper,
+      headlight: this.state.headlight,
+      make: this.state.make,
+      link: this.state.link,
+      engine: this.state.engine,
+      transmission:this.state.transmission,
+      vin:this.state.vin,
+      seat: this.state.seat, 
+      price: this.state.price,
+ext_color: this.state.ext_color,
+            checked: false,
       starred: false,
       timestamp: timeRef
+
+          
     };
   
 
   if (NewCar.body_type.length) {
-      CarsRef.push(NewCar);
+     CarsRef.child(carid).set(NewCar);
       this.setState({ body_type: '' });
+      this.setState({ wiper: '' });
+      this.setState({ make: '' });
+      this.setState({link:''});
+       this.setState({ headlight: '' });
+       this.setState({price: ''});
+       this.setState({transmission: ''});
+       this.setState({engine: ''});
+          this.setState({vin: ''});
+            this.setState({ext_color: ''});
     }
+    this.props.history.push('/admin');
   };
   alertMsgClose = () => {
     this.setState({ alertMsg: false });
@@ -115,6 +140,7 @@ class NewCar extends Component {
                       <option>Levante</option>
                       <option>Aventador</option>
                       <option>Outback</option>
+                      <option>Corolla</option>
                     </Input>
                   </FormGroup>
                 </Col>
@@ -335,7 +361,7 @@ class NewCar extends Component {
                 <Col md="1">
                <form onSubmit={this.onSubmit}>
  
-    <form type="text" className="form-control"/>
+
     <Button className="btn btn-primary btn-large centerButton" type="submit">Save</Button>
     </form>
                 </Col>

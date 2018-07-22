@@ -3,6 +3,36 @@ import { Card, CardImg, CardBody,
   CardTitle, Button } from 'reactstrap';
 
 export default class Services extends Component{
+
+
+  constructor(props) {
+        super(props);
+        this.state = {
+            info: "",
+            msg:"more",
+            counter: 0
+        };
+
+this.showMore = this.showMore.bind(this);
+
+
+}
+ showMore() { 
+
+this.setState({counter: this.state.counter+1})
+console.log("counter is" + this.state.counter);
+
+if (this.state.counter%2===0) {
+this.setState({info:"we have many Vehicles in our shop. Cheap Price and Finance Available. " , msg:"Less"})
+
+}
+
+ if (this.state.counter%2===1) {
+this.setState({info:"" , msg:"more"})
+
+}
+
+  }
   render(){
     return(
       <div className="services">
@@ -14,6 +44,7 @@ export default class Services extends Component{
                 <CardBody>
                   <CardTitle>Find New Vehicle</CardTitle>
                   <Button className='btn-success'>More</Button>
+                   <p> {this.state.info2} </p>
                 </CardBody>
               </Card>
             </div>
@@ -22,7 +53,8 @@ export default class Services extends Component{
                 <CardImg top width="100%" src="https://s3.amazonaws.com/cartool/finance.jpg" alt="Finance" />
                 <CardBody>
                   <CardTitle>Financing</CardTitle>
-                  <Button className='btn-success'>More</Button>
+                  <Button className='btn-success' onClick={this.showMore}>{this.state.msg}</Button>
+                  <p> {this.state.info} </p>
                 </CardBody>
               </Card>
             </div>
@@ -32,6 +64,8 @@ export default class Services extends Component{
                 <CardBody>
                   <CardTitle>Schedule Test Drive</CardTitle>
                   <Button className='btn-success'>More</Button>
+
+                   <p> {this.state.info3} </p>
                 </CardBody>
               </Card>
             </div>
@@ -41,6 +75,7 @@ export default class Services extends Component{
                 <CardBody>
                   <CardTitle>Schedule Service</CardTitle>
                   <Button className='btn-success'>More</Button>
+                   <p> {this.state.info4} </p>
                 </CardBody>
               </Card>
             </div>
@@ -49,4 +84,4 @@ export default class Services extends Component{
       </div>
     );
   }
-}
+ore}

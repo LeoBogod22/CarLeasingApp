@@ -82,7 +82,7 @@ class TopSearchBar extends Component {
                   </select>
               </div>
               <div className="col-3">
-                  <button type="submit" className="btn btn-success btn-block">Search</button>
+                  <button type="submit" className="btn btn-success btn-block" onClick={this.search}>Search</button>
               </div>
             </div>
           </form>

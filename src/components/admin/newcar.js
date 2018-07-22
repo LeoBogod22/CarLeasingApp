@@ -43,6 +43,7 @@ let carid = CarsRef.push().key;
     id: carid,
       body_type: this.state.body_type.trim(),
       wiper: this.state.wiper,
+      sale: this.state.sale,
       headlight: this.state.headlight,
       make: this.state.make,
       link: this.state.link,
@@ -72,6 +73,7 @@ ext_color: this.state.ext_color,
        this.setState({engine: ''});
           this.setState({vin: ''});
             this.setState({ext_color: ''});
+            this.setState({sale: ''})
     }
     this.props.history.push('/admin');
   };

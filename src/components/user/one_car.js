@@ -10,14 +10,46 @@ import { twitter } from 'react-icons-kit/fa/twitter';
 import { instagram } from 'react-icons-kit/fa/instagram';
 import { googlePlus } from 'react-icons-kit/fa/googlePlus';
 import ContactForm from './contact';
+import { getsinglecar } from '../../actions/cars';
+import { CarsRef, timeRef } from '../admin/reference';
 
 
 class OneCar extends Component {
 
-
+   state = {
+    year: '',
+    make: '',
+    model: '',
+    trim: '',
+    engine: '',
+    drive_type: '',
+    body_type: '',
+    ext_color: '',
+    int_color: '',
+    transmission: '',
+    price: 0,
+    sale: 0,
+    status: true,
+    vin: '',
+    link: '',
+    elect_stab: '',
+    wireless: '',
+    seat: '',
+    keyless: '',
+    trip_comp: '',
+    tire_pressure: '',
+    wiper: '',
+    id:'',
+    headlight: '',
+    alertMsg: false
+  }
+componentDidMount(){
+    const {dispatch, match} = this.props;
+    dispatch(getsinglecar(match.params.carid));
+}
 
   render(){
-
+  
     let id = this.props.car ? this.props.car.id : null;
     let year = this.props.car ? this.props.car.year : null;
     let make = this.props.car ? this.props.car.make : null;
@@ -28,7 +60,7 @@ class OneCar extends Component {
     let sale = this.props.car ? this.props.car.sale : null;
     let vin = this.props.car ? this.props.car.vin : null;
     let g66price = price - price * sale/100;
-
+ 
     let electronic = this.props.car ? this.props.car.elect_stab : null;
     let wireless = this.props.car ? this.props.car.wireless : null;
     let seat = this.props.car ? this.props.car.seat : null;
@@ -38,13 +70,15 @@ class OneCar extends Component {
     let wiper = this.props.car ? this.props.car.wiper : null;
     let headlight = this.props.car ? this.props.car.headlight : null;
 
+    alert(this.props.car);
+
     return (
       <Container>
         <Row>
           <Col md="12">
             <div className="card border-secondary mb-3">
             <div className="card-header">
-              <h3>{year} {make} {model} {trim} </h3>
+              <h3>{this.props.car.year} {car.make} {car.model} {trim} </h3>
               <p className="vin-stock"><strong>VIN:</strong> {vin},  <strong>STOCK ID: </strong> {id}</p>
             </div>
           </div>
@@ -211,8 +245,9 @@ class OneCar extends Component {
 
 function mapStateToProps(state, props){
   return{
-    car: state.cars.find(car => car.id == props.match.params.id)
+    car: state.car
+   
   }
 }
 
-export default connect(mapStateToProps, null)(OneCar);
+export default connect(mapStateToProps)(OneCar)

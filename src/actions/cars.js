@@ -1,8 +1,11 @@
 import axios from 'axios'
+import thunkMiddleware from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux'
 
-import { carsRef, authRef, provider } from "../config/firebase";
+import { CarsRef, authRef, provider } from "../config/firebase";
 export const GET_CARS_PENDING = 'GET_CARS_PENDING'
 export const GET_CARS_SUCCESS = 'GET_CARS_SUCCESS'
+export const GET_SINGLE_CAR = 'GET_SINGLE_CAR'
 export const ADD_CAR_PENDING = 'ADD_CAR_PENDING'
 export const ADD_CAR_SUCCESS = 'ADD_CAR_SUCCESS'
 export const EDIT_CAR_PENDING = 'EDIT_CAR_PENDING'
@@ -10,16 +13,40 @@ export const EDIT_CAR_SUCCESS = 'EDIT_CAR_SUCCESS'
 export const REMOVE_CAR_PENDING = 'REMOVE_CAR_PENDING'
 export const REMOVE_CAR_SUCCESS = 'REMOVE_CAR_SUCCESS'
 
-export const getCars = () => {
-  return async (dispatch) => {
-    dispatch({ type: GET_CARS_PENDING })
-    let cars = await axios.get('http://localhost:8000/cars')
+
+
+export function getCarsThunk() {
+ return dispatch => {
+ const cars = [];
+CarsRef.on('value', snap => {
+      const tasks = [];
+      let Cars = []
+      snap.forEach(shot => {
+       Cars.push({ ...shot.val(), key: shot.key });
+     })
+ })
+ dispatch({
+  type:GET_CARS_SUCCESS,
+payload:cars
+  })
+  }
+
+}
+
+
+
+export function  getsinglecar(car){
+ return async dispatch => {
+ CarsRef.child(car.id).once("value", function(snapshot) {
     dispatch({
-      type: GET_CARS_SUCCESS,
-      payload: cars
-    })
+      type: GET_SINGLE_CAR,
+      payload: snapshot.val()
+   })
+  
+ })
   }
 }
+
 
 export const createCar = (newCar) => {
   return async (dispatch) => {
@@ -31,6 +58,9 @@ export const createCar = (newCar) => {
     })
   }
 }
+
+
+
 
 export const editCar = (editedCar) => {
   console.log(editedCar, "*****");

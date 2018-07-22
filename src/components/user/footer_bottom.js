@@ -4,7 +4,7 @@ export default class FooterBottom extends Component{
     return(
       <div className="footer-bottom light-text">
         <div className="container">
-          &copy; Rahul 2017
+          &copy; leo 2018
         </div>
       </div>
     );

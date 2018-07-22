@@ -31,6 +31,12 @@ body {
 .car-icon{
   margin-right: 7px;
 }
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    float: left;
+}
 .carList-row{
   margin-top: 1em;
   margin-bottom: 1em;

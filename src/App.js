@@ -24,11 +24,9 @@ import EditCar from './components/admin/edit_car';
 class App extends Component {
 
   componentDidMount(){
-    this.props.getCars();
+
     this.props.getMessages();
   }
-
- 
 
 
   render() {
@@ -43,7 +41,7 @@ class App extends Component {
                   <AdminNavigatioBar />
                   <Route exact path='/admin/' component={Cars} />
                   <Route exact path='/admin/newcar' component={NewCar} />
-                  <Route exact path='/admin/editcar/:id' component={EditCar} />
+                  <Route exact path='/admin/editcar/:carid' component={EditCar} />
                   <Route exact path='/admin/messages' component={Messages} />
 
                 </div>
@@ -55,7 +53,7 @@ class App extends Component {
                     <TopSearchBar {...props}/>
                     <Route exact path='/' component={UserHomePage} />
                     <Route exact path='/cars' component={CarsList} />
-                    <Route exact path='/cars/:id' component={OneCar} />
+                    <Route exact path='/cars/:car' component={OneCar} />
                     <FooterTop />
                     <FooterBottom />
                 </div>
@@ -72,7 +70,6 @@ class App extends Component {
 
 function mapDispatchToProps(dispatch){
   return{
-      getCars: bindActionCreators(getCars, dispatch),
       getMessages: bindActionCreators(getMessages, dispatch)
   }
 }

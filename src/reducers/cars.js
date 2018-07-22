@@ -44,7 +44,7 @@ import thunkMiddleware from 'redux-thunk'
 function Reducer (state = [], action) {
  switch (action.type) {
   case GET_CARS_SUCCESS:
-   return action.cars
+   return action.payload
   default:
    return state
   }
@@ -55,7 +55,8 @@ function Reducer (state = [], action) {
 function Reducer (state = [], action) {
  switch (action.type) {
   case GET_SINGLE_CAR:
-   return action.car
+      console.log("TEST", action)
+   return {car: action.payload} 
   default:
    return state
   }

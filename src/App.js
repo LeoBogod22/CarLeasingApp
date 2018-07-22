@@ -53,7 +53,7 @@ class App extends Component {
                     <TopSearchBar {...props}/>
                     <Route exact path='/' component={UserHomePage} />
                     <Route exact path='/cars' component={CarsList} />
-                    <Route exact path='/cars/:car' component={OneCar} />
+                    <Route exact path='/cars/:id' component={OneCar} />
                     <FooterTop />
                     <FooterBottom />
                 </div>

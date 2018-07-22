@@ -45,7 +45,9 @@ class OneCar extends Component {
   }
 componentDidMount(){
     const {dispatch, match} = this.props;
-    dispatch(getsinglecar(match.params.carid));
+    alert(match.params.id);
+      console.log("RESULT", match.params.id)
+    dispatch(getsinglecar(match.params.id));
 }
 
   render(){
@@ -70,7 +72,6 @@ componentDidMount(){
     let wiper = this.props.car ? this.props.car.wiper : null;
     let headlight = this.props.car ? this.props.car.headlight : null;
 
-    alert(this.props.car);
 
     return (
       <Container>

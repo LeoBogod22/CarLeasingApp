@@ -7,7 +7,7 @@ import { CardImg, Button, Row, Col, Table } from 'reactstrap';
 import { getsinglecar } from '../../actions/cars';
 import Icon from 'react-icons-kit';
 import { bin } from 'react-icons-kit/icomoon';
-
+import { getCarsThunk } from '../../actions/cars';
 import { Link } from 'react-router-dom';
 
 
@@ -25,6 +25,11 @@ class CarsList extends Component {
     this.props.deleteCar(id);
   }
 
+
+componentDidMount(){
+    const {dispatch, match} = this.props;
+    dispatch(getCarsThunk());
+}
 
  componentWillMount() { 
 

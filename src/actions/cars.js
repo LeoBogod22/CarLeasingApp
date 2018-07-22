@@ -35,9 +35,9 @@ payload:cars
 
 
 
-export function  getsinglecar(car){
+export function  getsinglecar(id){
  return async dispatch => {
- CarsRef.child(car.id).once("value", function(snapshot) {
+ CarsRef.child(id).once("value", function(snapshot) {
     dispatch({
       type: GET_SINGLE_CAR,
       payload: snapshot.val()

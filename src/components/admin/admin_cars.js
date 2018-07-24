@@ -63,15 +63,19 @@ CarsRef.on('value', snap => {
                 <td>{car.price}</td> 
         
                 <td>
-                  <Link to={`/admin/editcar/${car.id}`}>
-                    <Icon icon={pencil} />
-                  </Link>
-
+                 
+          
                 </td>
-              
+                 <td>
+
+                 
+              </td>
+              <Link to={{ pathname:`/admin/editcar/${car.id}`, state: { car } }} >
+               <Icon icon={pencil} />
+              </Link>
               </tr>
             ))}
-      
+           
             </ul>
            );
       }

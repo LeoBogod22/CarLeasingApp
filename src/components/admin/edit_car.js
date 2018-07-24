@@ -58,6 +58,7 @@ editcar = (e) => {
       vin:this.state.vin,
       seat: this.state.seat, 
       price: this.state.price,
+      sale: this.state.sale,
 ext_color: this.state.ext_color,
             checked: false,
       starred: false,
@@ -78,12 +79,15 @@ ext_color: this.state.ext_color,
        this.setState({engine: ''});
           this.setState({vin: ''});
             this.setState({ext_color: ''});
-            this.setState({id: ''})
+            this.setState({id: ''});
+            this.setState9({sale: ''});
 
                 this.props.history.push('/admin');
     }
 
-  
+  componentDidMount(){
+    alert('ddlL');
+}
 
     
  deleteTask = (e) => {
@@ -120,7 +124,7 @@ ext_color: this.state.ext_color,
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="make">Make</Label>
+                    <Label for="make">Make : {this.props.location.state.car.make}</Label>
                     <Input type="select" name="select" id="make"
                       value={this.state.make}
                       onChange={(e) => this.setState({make: e.target.value})}
@@ -137,7 +141,7 @@ ext_color: this.state.ext_color,
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="model">Model</Label>
+                    <Label for="model">Model - {this.props.location.state.car.model}</Label>
                     <Input type="select" name="select" id="model"
                       value={this.state.model}
                       onChange={(e) => this.setState({model: e.target.value})}
@@ -163,7 +167,7 @@ ext_color: this.state.ext_color,
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="body">Body</Label>
+                    <Label for="body">Body: {this.props.location.state.car.body}</Label>
                     <Input type="select" name="select" id="body"
                       value={this.state.body_type}
                       onChange={(e) => this.setState({body_type: e.target.value})}
@@ -183,7 +187,7 @@ ext_color: this.state.ext_color,
               <Row>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="trim">Trim</Label>
+                    <Label for="trim">Trim: {this.props.location.state.car.trim}</Label>
                     <Input type="text" id="trim"
                       value={this.state.trim}
                       onChange={(e) => this.setState({trim: e.target.value})}
@@ -192,7 +196,7 @@ ext_color: this.state.ext_color,
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="engine">Engine</Label>
+                    <Label for="engine">Engine: {this.props.location.state.car.engine}</Label>
                     <Input type="text" id="engine"
                       value={this.state.engine}
                       onChange={(e) => this.setState({engine: e.target.value})}
@@ -201,7 +205,7 @@ ext_color: this.state.ext_color,
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="drivetype">Drive Type</Label>
+                    <Label for="drivetype">Drive Type: {this.props.location.state.car.drive_type}</Label>
                     <Input type="text" id="drivetype"
                       value={this.state.drive_type}
                       onChange={(e) => this.setState({drive_type: e.target.value})}
@@ -210,7 +214,7 @@ ext_color: this.state.ext_color,
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="Exteriorcolor">Exterior Color</Label>
+                    <Label for="Exteriorcolor">Exterior Color - {this.props.location.state.car.ext_color}</Label>
                     <Input type="text" id="Exteriorcolor"
                       value={this.state.ext_color}
                       onChange={(e) => this.setState({ext_color: e.target.value})}
@@ -239,8 +243,9 @@ ext_color: this.state.ext_color,
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="Price">Price</Label>
+                    <Label for="Price">Price - {this.props.location.state.car.price}$</Label>
                     <Input type="text" id="Price"
+                      value={this.state.price}
                       value={this.state.price}
                       onChange={(e) => this.setState({price: e.target.value})}
                     />
@@ -251,6 +256,7 @@ ext_color: this.state.ext_color,
                     <Label for="sale">Sale</Label>
                     <Input type="text" id="sale"
                       value={this.state.sale}
+                    
                       onChange={(e) => this.setState({sale: e.target.value})}
                     />
                   </FormGroup>
@@ -277,7 +283,7 @@ ext_color: this.state.ext_color,
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="link">Image Link</Label>
+                    <Label for="link"><a href={this.props.location.state.car.link}> Image </a> </Label>
                     <Input type="text" id="link"
                       value={this.state.link}
                       onChange={(e) => this.setState({link: e.target.value})}

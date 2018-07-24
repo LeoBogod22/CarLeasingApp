@@ -12,6 +12,8 @@ import FooterTop from './components/user/footer_top';
 import FooterBottom from './components/user/footer_bottom';
 import UserHomePage from './components/user/home';
 import CarsList from './components/user/cars_list';
+
+import Searchresults from './components/user/searchresult';
 import OneCar from './components/user/one_car';
 
 // Admin Components
@@ -53,6 +55,7 @@ class App extends Component {
                     <TopSearchBar {...props}/>
                     <Route exact path='/' component={UserHomePage} />
                     <Route exact path='/cars' component={CarsList} />
+                    <Route exact path='/cars2/:make' component={Searchresults} />
                     <Route exact path='/cars/:id' component={OneCar} />
                     <FooterTop />
                     <FooterBottom />

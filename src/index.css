@@ -28,6 +28,15 @@ body {
 .services{
   padding: 5em;
 }
+
+.react-slideshow-container .nav:first-of-type {
+    margin-right: -30px;
+    color: black;
+}
+.react-slideshow-container .nav:last-of-type {
+    margin-left: -60px;
+    color: black;
+}
 .car-icon{
   margin-right: 7px;
 }

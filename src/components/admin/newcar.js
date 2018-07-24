@@ -14,6 +14,8 @@ class NewCar extends Component {
     model: '',
     trim: '',
     engine: '',
+    link2: '',
+    link3:'',
     drive_type: '',
     body_type: '',
     ext_color: '',
@@ -50,7 +52,7 @@ let carid = CarsRef.push().key;
       engine: this.state.engine,
       transmission:this.state.transmission,
       vin:this.state.vin,
-      seat: this.state.seat, 
+      link2: this.state.link2, 
       price: this.state.price,
 ext_color: this.state.ext_color,
             checked: false,
@@ -72,6 +74,7 @@ ext_color: this.state.ext_color,
        this.setState({transmission: ''});
        this.setState({engine: ''});
           this.setState({vin: ''});
+          this.setState({link2: ''})
             this.setState({ext_color: ''});
             this.setState({sale: ''})
     }
@@ -291,19 +294,19 @@ ext_color: this.state.ext_color,
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="split">Split folding rear seat</Label>
+                    <Label for="split">Image two</Label>
                     <Input type="text" id="split"
-                      value={this.state.seat}
-                      onChange={(e) => this.setState({seat: e.target.value})}
+                      value={this.state.link2}
+                      onChange={(e) => this.setState({link2: e.target.value})}
                     />
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="remote">Remote keyless entry</Label>
+                    <Label for="remote">img link3</Label>
                     <Input type="text" id="remote"
-                      value={this.state.keyless}
-                      onChange={(e) => this.setState({keyless: e.target.value})}
+                      value={this.state.link3}
+                      onChange={(e) => this.setState({link3: e.target.value})}
                     />
                   </FormGroup>
                 </Col>

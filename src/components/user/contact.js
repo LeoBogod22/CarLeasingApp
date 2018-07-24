@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Form, FormGroup, Input, Alert, Label } from 'reactstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { sendMessage } from '../../actions/message'
+import { sendMessage } from '../../actions/message';
+import axios from 'axios';
 class ContactForm extends Component {
 
   state = {
@@ -17,13 +18,27 @@ class ContactForm extends Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.sendMessage(this.state);
-    this.setState({
-      alertMsg: true, uname:'', uemail:'', uphone:'', uinterest:'', umessage:''
-    })
-  }
-
+     e.preventDefault();
+        const name = this.state.uname;
+        const email = this.state.uemail;
+        const message = this.state.umessage;
+        axios({
+            method: "POST", 
+            url:"http://localhost:8000/send", 
+            data: {
+                name: name,   
+                email: email,  
+                messsage: message
+            }
+        }).then((response)=>{
+            if (response.data.msg === 'success'){
+                alert("Message Sent."); 
+               
+            }else if(response.data.msg === 'fail'){
+                alert("Message failed to send.")
+            }
+        })
+    }
   alertMsgClose = () => {
     this.setState({ alertMsg: false });
   }
@@ -36,7 +51,7 @@ class ContactForm extends Component {
       <br></br>
       <br></br>
       <br></br>
-      <Form method="POST" action="/contact">
+      <Form method="POST" onSubmit={this.handleSubmit.bind(this)} method="POST">
         <div className="row">
           <div className="col-3">
             <FormGroup>

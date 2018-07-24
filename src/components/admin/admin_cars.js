@@ -40,7 +40,6 @@ CarsRef.on('value', snap => {
       
     let carList;
           
-            console.log(Cars.year)
     if (CarsLoading) {
         carList = <div className="TaskList-empty">Loading...</div>; 
 

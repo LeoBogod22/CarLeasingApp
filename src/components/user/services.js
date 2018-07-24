@@ -81,7 +81,7 @@ this.setState({info2:"" , msg:"more"})
                 <CardImg top width="100%" src="https://s3.amazonaws.com/cartool/test_drive.jpg" alt="Test Drive" />
                 <CardBody>
                   <CardTitle>Schedule Test Drive</CardTitle>
-                  <Button className='btn-success' onClick={this.showMore2}>{this.state.msg}</Button>
+                <Link to="/contact">  <Button className='btn-success'> Test Drive </Button> </Link>
 
                    <p> {this.state.info2} </p>
                 </CardBody>

@@ -32,7 +32,11 @@ class ContactForm extends Component {
 
     return(
       <div>
-      <Form onSubmit={this.handleSubmit}>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Form method="POST" action="/contact">
         <div className="row">
           <div className="col-3">
             <FormGroup>
@@ -85,16 +89,26 @@ class ContactForm extends Component {
           <div className="col-2">
             <br/>
             <FormGroup>
+
+      <br></br>
               <button type="submit" class="btn btn-success">Submit</button>
             </FormGroup>
           </div>
         </div>
-        <Alert
-          isOpen={this.state.alertMsg}
-          toggle={this.alertMsgClose}
-          color="success">
-          Message sent successfully. We will get back to you!
-        </Alert>
+        
+         <div>
+      { window.location.hash === '#success' &&
+        <div id="success">
+          <p>Your message has been sent!</p>
+        </div>
+      }
+      { window.location.hash === '#error' &&
+        <div id="error">
+          <p>An error occured while submitting the form.</p>
+        </div>
+      }
+    </div>
+       
     </Form>
     </div>
     );

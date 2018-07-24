@@ -22,7 +22,7 @@ import Cars from './components/admin/admin_cars';
 import NewCar from './components/admin/newcar';
 import Messages from './components/admin/messages';
 import EditCar from './components/admin/edit_car';
-
+import ContactForm from './components/user/contact';
 class App extends Component {
 
   componentDidMount(){
@@ -57,6 +57,7 @@ class App extends Component {
                     <Route exact path='/cars' component={CarsList} />
                     <Route exact path='/cars2/:make' component={Searchresults} />
                     <Route exact path='/cars/:id' component={OneCar} />
+                    <Route exact path='/contact' component={ContactForm}/>
                     <FooterTop />
                     <FooterBottom />
                 </div>

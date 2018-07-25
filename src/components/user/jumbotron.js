@@ -78,6 +78,7 @@ class JumboTron extends Component {
     });
 
     return (
+    
       <div className="container">
         <Carousel
           activeIndex={activeIndex}

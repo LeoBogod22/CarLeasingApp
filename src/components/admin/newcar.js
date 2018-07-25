@@ -53,6 +53,7 @@ let carid = CarsRef.push().key;
       transmission:this.state.transmission,
       vin:this.state.vin,
       link2: this.state.link2, 
+      link3: this.state.link3,
       price: this.state.price,
 ext_color: this.state.ext_color,
             checked: false,
@@ -74,9 +75,11 @@ ext_color: this.state.ext_color,
        this.setState({transmission: ''});
        this.setState({engine: ''});
           this.setState({vin: ''});
-          this.setState({link2: ''})
+          this.setState({link2: ''});
             this.setState({ext_color: ''});
-            this.setState({sale: ''})
+            this.setState({sale: ''});
+
+          this.setState({link3: ''})
     }
     this.props.history.push('/admin');
   };

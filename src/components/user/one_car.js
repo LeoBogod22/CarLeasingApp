@@ -32,6 +32,7 @@ class OneCar extends Component {
     sale: 0,
     status: true,
     vin: '',
+    link3:'',
     link: '',
     link2: '',
     elect_stab: '',

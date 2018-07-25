@@ -22,21 +22,26 @@ class ContactForm extends Component {
         const name = this.state.uname;
         const email = this.state.uemail;
         const message = this.state.umessage;
+        console.log("Sending", this.state)
         axios({
             method: "POST", 
-            url:"http://localhost:8000/send", 
+            url:"http://localhost:4000/send", 
             data: {
                 name: name,   
                 email: email,  
-                messsage: message
+                message: message
             }
         }).then((response)=>{
+          console.log(response.data)
             if (response.data.msg === 'success'){
                 alert("Message Sent."); 
                
             }else if(response.data.msg === 'fail'){
                 alert("Message failed to send.")
             }
+        })
+        .catch(err => {
+          console.log(err)
         })
     }
   alertMsgClose = () => {

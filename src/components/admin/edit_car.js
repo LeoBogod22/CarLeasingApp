@@ -80,7 +80,7 @@ ext_color: this.state.ext_color,
           this.setState({vin: ''});
             this.setState({ext_color: ''});
             this.setState({id: ''});
-            this.setState9({sale: ''});
+            this.setState({sale: ''});
 
                 this.props.history.push('/admin');
     }

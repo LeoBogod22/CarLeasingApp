@@ -3,16 +3,16 @@ import JumboTron from './jumbotron';
 import Services from './services';
 import firebase from 'firebase';
 import CarsList from './cars_list'
-class UserHomePage extends Component {
+class User extends Component {
   render(){
     return(
       <div>
-        <JumboTron />
-        <Services />
-         <p>dd</p>
+      
+         <p>welcome</p>
+         
       </div>
 
     );
   }
 }
-export default UserHomePage;
+export default User;

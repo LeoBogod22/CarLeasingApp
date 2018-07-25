@@ -5,31 +5,68 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
+  Button,
   NavItem,
   NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
-
+  DropdownItem } from 'reactstrap';import { withRouter } from "react-router";
 import Icon from 'react-icons-kit';
 import { car } from 'react-icons-kit/fa/car';
-
+import { Redirect,Link } from 'react-router-dom'
+import app from "../config/dev";
 export default class NavigatioBar extends React.Component {
+
+
   constructor(props) {
     super(props);
-
-    this.toggle = this.toggle.bind(this);
-    this.state = {
+    this.state={
+     authenticated: false,
+      currentUser: null,
+      
+ 
+    
       isOpen: false
-    };
+    
+   
   }
+  this.toggle = this.toggle.bind(this);
+
+}
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
   }
+
+ signout(){
+   app.auth().signOut().then((user) => {
+   alert("signed out")
+    })
+
+}
+
+componentWillMount() {
+app.auth().onAuthStateChanged((user) => {
+     
+ 
+    if (user) {
+      this.setState({
+        currentUser: user,
+        authenticated: true
+      })
+    } else {
+      this.setState({
+        currentUser: null,
+        authenticated: false
+      })
+    }
+      });
+  }
   render() {
+ alert(this.state.authenticated)
+ const authenticated = this.state.authenticated;
     return (
       <div>
         <Navbar color="primary" dark expand="md">
@@ -56,7 +93,17 @@ export default class NavigatioBar extends React.Component {
                   <DropdownToggle nav caret>
                     ABOUT
                   </DropdownToggle>
+                     
                   <DropdownMenu >
+                   {authenticated ? ( 
+
+                    <DropdownItem onClick={this.signout}>
+                        <Button classname="btn-btn-primary">SignOut </Button>
+                        </DropdownItem>
+      ) : (
+       <Button classname="btn-btn-primary"> <Link to="/login"> Login  </Link> </Button>
+      )}
+     
                     <DropdownItem>
                       ABOUT US
                     </DropdownItem>

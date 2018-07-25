@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('.routes');
+var index = require('./routes/routes');
 
 
 var app = express();
@@ -48,5 +48,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
  
 });
+
+app.listen(4000, () => {
+  console.log("Ready")
+})
 
 module.exports = app;

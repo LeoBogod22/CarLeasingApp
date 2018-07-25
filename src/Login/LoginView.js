@@ -1,10 +1,12 @@
 import React from "react";
-
+import NavigationBar from '../components/user/navigation_bar';
+import TopSearchBar from '../components/user/top_search_bar';
 const LogInView = ({ onSubmit }) => {
   return (
     <div>
+
       <h1>Log in</h1>
-      <form onSubmit={onSubmit}>
+      <form id="style" onSubmit={onSubmit}>
         <label>
           Email
           <input
@@ -23,7 +25,7 @@ const LogInView = ({ onSubmit }) => {
             placeholder="Password"
           />
         </label>
-        <button type="submit">Log in</button>
+        <button bsStyle="primary" id="c" type="submit">Log in</button>
       </form>
     </div>
   );

@@ -17,11 +17,19 @@ class ContactForm extends Component {
     alertMsg: false
   }
 
+
+   alertMsgClose = () => {
+    this.setState({ alertMsg: false });
+  }
+
+
   handleSubmit = (e) => {
      e.preventDefault();
         const name = this.state.uname;
         const email = this.state.uemail;
         const message = this.state.umessage;
+        
+       
         console.log("Sending", this.state)
         axios({
             method: "POST", 
@@ -34,7 +42,9 @@ class ContactForm extends Component {
         }).then((response)=>{
           console.log(response.data)
             if (response.data.msg === 'success'){
-                alert("Message Sent."); 
+               this.setState({
+      alertMsg: true
+    }) 
                
             }else if(response.data.msg === 'fail'){
                 alert("Message failed to send.")
@@ -56,7 +66,7 @@ class ContactForm extends Component {
       <br></br>
       <br></br>
       <br></br>
-      <Form method="POST" onSubmit={this.handleSubmit.bind(this)} method="POST">
+      <Form id="d" method="POST" onSubmit={this.handleSubmit.bind(this)} method="POST">
         <div className="row">
           <div className="col-3">
             <FormGroup>
@@ -117,16 +127,12 @@ class ContactForm extends Component {
         </div>
         
          <div>
-      { window.location.hash === '#success' &&
-        <div id="success">
-          <p>Your message has been sent!</p>
-        </div>
-      }
-      { window.location.hash === '#error' &&
-        <div id="error">
-          <p>An error occured while submitting the form.</p>
-        </div>
-      }
+        <Alert
+          isOpen={this.state.alertMsg}
+          toggle={this.alertMsgClose}
+          color="success">
+          Message sent successfully. We will get back to you!
+        </Alert>
     </div>
        
     </Form>

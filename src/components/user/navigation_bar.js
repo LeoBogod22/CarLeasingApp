@@ -24,7 +24,7 @@ export default class NavigatioBar extends React.Component {
     this.state={
      authenticated: false,
       currentUser: null,
-      
+       redirect: false,
  
     
       isOpen: false
@@ -32,6 +32,7 @@ export default class NavigatioBar extends React.Component {
    
   }
   this.toggle = this.toggle.bind(this);
+  this.signout = this.signout.bind(this);
 
 }
   toggle() {
@@ -42,7 +43,8 @@ export default class NavigatioBar extends React.Component {
 
  signout(){
    app.auth().signOut().then((user) => {
-   alert("signed out")
+    this.setState ({ redirect: true })
+  
     })
 
 }
@@ -65,6 +67,11 @@ app.auth().onAuthStateChanged((user) => {
       });
   }
   render() {
+     const { redirect } = this.state;
+
+     if (redirect) {
+       return <Redirect to='/signout'/>;
+     }
  alert(this.state.authenticated)
  const authenticated = this.state.authenticated;
     return (
@@ -101,7 +108,9 @@ app.auth().onAuthStateChanged((user) => {
                         <Button classname="btn-btn-primary">SignOut </Button>
                         </DropdownItem>
       ) : (
-       <Button classname="btn-btn-primary"> <Link to="/login"> Login  </Link> </Button>
+      <DropdownItem>
+        <Link to="/login"> Login  </Link> 
+       </DropdownItem>
       )}
      
                     <DropdownItem>

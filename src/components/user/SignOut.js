@@ -5,12 +5,12 @@ import firebase from 'firebase';
 import CarsList from './cars_list';
 import TopSearchBar from './top_search_bar';
 import NavigationBar from './navigation_bar';
-class UserHomePage extends Component {
+class Signout extends Component {
   render(){
     return(
       <div>
     
-
+       <NavigationBar/>
         <JumboTron />
         <Services />
         <CarsList/>
@@ -20,4 +20,4 @@ class UserHomePage extends Component {
     );
   }
 }
-export default UserHomePage;
+export default Signout;

@@ -4,7 +4,7 @@ const SignUpView = ({ onSubmit }) => {
   return (
     <div>
       <h1>Sign up</h1>
-      <form onSubmit={onSubmit}>
+      <form classname="form-style-8" onSubmit={onSubmit}>
         <label>
           Email
           <input
@@ -23,7 +23,7 @@ const SignUpView = ({ onSubmit }) => {
             placeholder="Password"
           />
         </label>
-        <button type="submit">Sign Up</button>
+        <button classname="btn" type="submit">Sign Up</button>
       </form>
     </div>
   );

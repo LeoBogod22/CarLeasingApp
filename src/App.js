@@ -32,6 +32,7 @@ import Home from "./components/user/home";
 import User from "./components/user/user";
 import SignUp from "./SignUp";
 import ContactForm from './components/user/contact';
+import SignOut from './components/user/SignOut';
 class App extends Component {
 
   componentDidMount(){
@@ -95,6 +96,7 @@ class App extends Component {
           />
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/signup" component={SignUp} />
+                     <Route exact path="/signout" component={SignOut} />
                     <Route exact path='/cars' component={CarsList} />
                     <Route exact path='/cars2/:make' component={Searchresults} />
                     <Route exact path='/cars/:id' component={OneCar} />

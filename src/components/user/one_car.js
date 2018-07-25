@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button} from 'reactstrap';
 import Img from 'react-image';
 import { Table } from 'reactstrap';
 import Icon from 'react-icons-kit';
@@ -12,15 +12,16 @@ import { googlePlus } from 'react-icons-kit/fa/googlePlus';
 import ContactForm from './contact';
 import { getsinglecar } from '../../actions/cars';
 import { CarsRef, timeRef } from '../admin/reference';
-
+import app from "../config/dev";
 import { Slide } from 'react-slideshow-image';
-
+import { Redirect,Link } from 'react-router-dom'
 class OneCar extends Component {
 
    state = {
     year: '',
     make: '',
     model: '',
+    authenticated: false,
     trim: '',
     engine: '',
     drive_type: '',
@@ -51,8 +52,36 @@ componentDidMount(){
     dispatch(getsinglecar(match.params.id));
 }
 
+Save(e){
+e.preventDefault();
+
+// Create a new ref and log it’s push key
+CarsRef.database().ref('users/' + user.uid).set({
+            car:this.props.location.state.car.id;
+        })
+
+
+}
+componentWillMount() {
+app.auth().onAuthStateChanged((user) => {
+     
+ 
+    if (user) {
+      this.setState({
+        currentUser: user,
+        authenticated: true
+      })
+    } else {
+      this.setState({
+        currentUser: null,
+        authenticated: false
+      })
+    }
+      });
+  }
+
   render(){
-  
+  const authenticated = this.state.authenticated;
 
 
 
@@ -175,6 +204,16 @@ const images = [
                                         </div>
                                     </div>
                                     <br/>
+                                      {authenticated ? ( 
+
+                
+                        <Button classname="btn-btn-primary" onClick={this.save}>save </Button>
+                      
+      ) : (
+      
+        <Link to="/login"> Login to save  </Link> 
+   
+      )}
                                     <div className="row">
                                         <div className="md=12"></div>
                                     </div>

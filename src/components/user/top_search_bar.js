@@ -15,7 +15,7 @@ class TopSearchBar extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
   
-
+  alert(this.state.make)
     this.props.history.push(`/cars2/${this.state.make}`)
 
   }

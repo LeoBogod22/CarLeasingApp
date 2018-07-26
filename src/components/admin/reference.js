@@ -13,6 +13,8 @@ import * as firebase from "firebase";
 
 const databaseRef = firebase.database().ref();
 export const CarsRef = databaseRef.child("Cars");
+
+export const CarssRef = databaseRef.child("Cars2");
 export const authRef = firebase.auth();
 export const provider = new firebase.auth.GoogleAuthProvider();
 

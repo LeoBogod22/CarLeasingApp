@@ -15,7 +15,7 @@ import CarsList from './components/user/cars_list';
 
 import Searchresults from './components/user/searchresult';
 import OneCar from './components/user/one_car';
-
+import Service from './components/user/service';
 // Admin Components
 import AdminNavigatioBar from './components/admin/admin_top_navigation';
 import Cars from './components/admin/admin_cars';
@@ -101,6 +101,8 @@ class App extends Component {
                     <Route exact path='/cars2/:make' component={Searchresults} />
                     <Route exact path='/cars/:id' component={OneCar} />
                     <Route exact path='/contact' component={ContactForm}/>
+                    <Route exact path='/user' component={User}/>
+                    <Route exact path='/service' component={Service}/>
                     <FooterTop />
                     <FooterBottom />
                 </div>

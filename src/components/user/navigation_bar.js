@@ -91,7 +91,7 @@ app.auth().onAuthStateChanged((user) => {
                   <NavLink href="/">FINANCE</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">SERVICE</NavLink>
+                  <NavLink href="/service">SERVICE</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="/">PARTS</NavLink>
@@ -106,10 +106,13 @@ app.auth().onAuthStateChanged((user) => {
 
                     <DropdownItem onClick={this.signout}>
                         <Button classname="btn-btn-primary">SignOut </Button>
+                        <br></br> 
+                        <Link to="/user"> my profile </Link>
                         </DropdownItem>
       ) : (
       <DropdownItem>
         <Link to="/login"> Login  </Link> 
+         <Link to="/signup"> sign Up </Link> 
        </DropdownItem>
       )}
      

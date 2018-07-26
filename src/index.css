@@ -51,8 +51,60 @@ body {
   border-color: #FF6F00;
 }
 
+#f{
+  text-align: center;
+}
 #style input[type="radio"] {
   margin-right: 10px;
+}
+
+#content {
+    position: relative;
+    /* background: #fff; */
+    padding: 30px 0 0px 0;
+}
+
+.info-blocks i.icon-info-blocks {
+    float: left;
+    color: #055999;
+    font-size: 30px;
+    min-width: 50px;
+    margin-top: 6px;
+    text-align: center;
+    background: #FFFFFF;
+    height: 64px;
+    padding: 18px;
+    border: 1px solid #ffc02a;
+}
+
+.info-blocks .info-blocks-in p {
+    font-size: 14px;
+}
+
+.info-blocks .info-blocks-in h3 {
+    color: #555;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0px;
+}
+
+#inner-headline {
+    background: #e4e3df;
+    position: relative;
+    margin: 0;
+    padding: 24px 0;
+    background-size: 39%;
+    background-repeat: no-repeat;
+}
+#inner-headline h2.pageTitle {
+    color: #055999;
+    padding: 5px 0;
+    text-align: center;
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    position: relative;
+    z-index: 3;
 }
 
 #style label {

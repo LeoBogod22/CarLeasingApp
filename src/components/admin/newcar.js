@@ -48,12 +48,16 @@ let carid = CarsRef.push().key;
       sale: this.state.sale,
       headlight: this.state.headlight,
       make: this.state.make,
+      seat: this.state.seat,
+      tire_pressure: this.state.tire_pressure,
       link: this.state.link,
       engine: this.state.engine,
+      wireless: this.state.wireless,
       transmission:this.state.transmission,
       vin:this.state.vin,
       link2: this.state.link2, 
       link3: this.state.link3,
+      keyless: this.state.keyless,
       price: this.state.price,
 ext_color: this.state.ext_color,
             checked: false,
@@ -69,6 +73,7 @@ ext_color: this.state.ext_color,
       this.setState({ body_type: '' });
       this.setState({ wiper: '' });
       this.setState({ make: '' });
+      this.setState({wireless:''});
       this.setState({link:''});
        this.setState({ headlight: '' });
        this.setState({price: ''});
@@ -78,8 +83,9 @@ ext_color: this.state.ext_color,
           this.setState({link2: ''});
             this.setState({ext_color: ''});
             this.setState({sale: ''});
-
-          this.setState({link3: ''})
+           this.setState({keyless: ''});
+          this.setState({link3: ''});
+           this.setState({tire_pressure: ''})
     }
     this.props.history.push('/admin');
   };

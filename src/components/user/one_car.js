@@ -11,10 +11,12 @@ import { instagram } from 'react-icons-kit/fa/instagram';
 import { googlePlus } from 'react-icons-kit/fa/googlePlus';
 import ContactForm from './contact';
 import { getsinglecar } from '../../actions/cars';
-import { CarsRef, timeRef } from '../admin/reference';
+import { CarsRef, CarssRef, timeRef } from '../admin/reference';
 import app from "../config/dev";
 import { Slide } from 'react-slideshow-image';
 import { Redirect,Link } from 'react-router-dom'
+
+var g_car_id;
 class OneCar extends Component {
 
    state = {
@@ -53,29 +55,38 @@ componentDidMount(){
     dispatch(getsinglecar(match.params.id));
 }
 
-save(car_id){
-   
+save(){
+  
     // Create a new ref and log it’s push key
     app.auth().onAuthStateChanged((user) => {
 
         //this was the variable u were using and is undefined
         //this.props.location.state.car.id
-        //Just change placeholder to whatever value you want, u can also add other fields
-        console.log(car_id);
+        //alert("car has been saved!")
+        //var car_id1 = window.location.href.split('/')[4];
+        alert(this.props.location.state.car.id);
         const newUser = {
             userID: user.uid,
-            //car: this.props.location.state.car.id 
+           
+            id: this.props.location.state.car.id,
+            make: this.props.location.state.car.make,
+            link:this.props.location.state.car.link,
+            price: this.props.location.state.car.price,
+            ext_color: this.props.location.state.car.ext_color
         }
         //push the Object newUser so that it's saved to firebase
-        CarsRef.push(newUser);
-
+        CarssRef.push(newUser);
+          
         //Display all keys and id value of all cars 
-        CarsRef.on("value", function(snapshot) {
+        CarssRef.on("value", function(snapshot) {
             snapshot.forEach(function(data) {
                     console.log("The user with key : " + data.key + " has an id value of : " + data.val().userID + "has saved the car : " + data.val().car);
                 });
+
         });
      });
+
+
 }
 componentWillMount() {
 app.auth().onAuthStateChanged((user) => {
@@ -96,9 +107,9 @@ app.auth().onAuthStateChanged((user) => {
   }
 
   render(){
-  const authenticated = this.state.authenticated;
+    const authenticated = this.state.authenticated;
 
-const car_id = '12345';
+   
 
     let id = this.props.car ? this.props.car.id : null;
     let year = this.props.car ? this.props.car.year : null;
@@ -140,7 +151,7 @@ const images = [
                     <Col md="12">
                         <div className="card border-secondary mb-3">
                             <div className="card-header">
-                                <h3>{this.props.car.year} {this.props.car.make} {this.props.car.model} {trim} </h3>
+                                <h3> {this.props.car.make} {this.props.car.model} {trim} </h3>
                                 <p className="vin-stock"><strong>VIN:</strong> {vin},  <strong>STOCK ID: </strong> {id}</p>
                             </div>
                         </div>
@@ -222,7 +233,7 @@ const images = [
                                       {authenticated ? ( 
 
                 
-                        <Button classname="btn-btn-primary" onClick={this.save}>save </Button>
+                        <Button classname="btn-btn-primary" onClick={()=>this.save()}>save </Button>
                       
       ) : (
       

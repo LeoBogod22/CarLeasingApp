@@ -47,20 +47,35 @@ class OneCar extends Component {
     headlight: '',
     alertMsg: false
   }
+
 componentDidMount(){
     const {dispatch, match} = this.props;
     dispatch(getsinglecar(match.params.id));
 }
 
-Save(e){
-e.preventDefault();
+save(car_id){
+   
+    // Create a new ref and log it’s push key
+    app.auth().onAuthStateChanged((user) => {
 
-// Create a new ref and log it’s push key
-CarsRef.database().ref('users/' + user.uid).set({
-            car:this.props.location.state.car.id;
-        })
+        //this was the variable u were using and is undefined
+        //this.props.location.state.car.id
+        //Just change placeholder to whatever value you want, u can also add other fields
+        console.log(car_id);
+        const newUser = {
+            userID: user.uid,
+            //car: this.props.location.state.car.id 
+        }
+        //push the Object newUser so that it's saved to firebase
+        CarsRef.push(newUser);
 
-
+        //Display all keys and id value of all cars 
+        CarsRef.on("value", function(snapshot) {
+            snapshot.forEach(function(data) {
+                    console.log("The user with key : " + data.key + " has an id value of : " + data.val().userID + "has saved the car : " + data.val().car);
+                });
+        });
+     });
 }
 componentWillMount() {
 app.auth().onAuthStateChanged((user) => {
@@ -83,7 +98,7 @@ app.auth().onAuthStateChanged((user) => {
   render(){
   const authenticated = this.state.authenticated;
 
-
+const car_id = '12345';
 
     let id = this.props.car ? this.props.car.id : null;
     let year = this.props.car ? this.props.car.year : null;

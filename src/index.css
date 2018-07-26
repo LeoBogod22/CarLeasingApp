@@ -81,13 +81,20 @@ body {
   display: inline-block;
   cursor: pointer;
 }
-h1, .h1 {
-    font-size: 2rem;
-    text-align: center;
-    color: beige;
-    font-family: initial;
-    text-transform: uppercase;
-}
+#d { color: #7c795d; font-family: 'Trocchi', serif; font-size: 45px; font-weight: normal; text-align:center; line-height: 48px; margin: 0; }
+
+
+
+
+.subheader { font-size: 26px; font-weight: 300; color: #ffcc66; margin: 0 0 24px; }
+
+
+
+
+
+
+
+
 #style{
     font-family: 'Open Sans Condensed', arial, sans;
     width: 500px;

@@ -8,95 +8,125 @@ export default class Service extends Component{
  render(){
     return(
 
-<div>
-<section id="inner-headline">
-	<div classname="container">
-		<div classname="row">
-			<div classname="col-lg-12">
-				<h2 classname="pageTitle">Services</h2>
-			</div>
-		</div>
-	</div>
-	</section>
 
-	<section id="content">
-		<div class="container content">	
-<div class="row">
-			<div class="col-md-12">
-				<div><h2>Our Quality Service</h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus ovident, doloribus omnis minus temporibus perferendis nesciunt..</div>
-				<br></br>
-			</div>
-		</div>		
+  <div>
+        {/* Navigation */}
        
-        <div classname="row service-v1 margin-bottom-40">
-            <div classname="col-md-4 md-margin-bottom-40">
-               <img classname="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ptyfEOpPGiqAG8vEpqICHTWuJsx6aOi5ggvTbLpHjjiqITpNvw"/> 
-                <h3>Managment</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus temporibus perferendis nesciunt quam repellendus nulla nemo ipsum odit corrupti consequuntur possimus</p>        
+        {/* Masthead */}
+        <br></br>
+        <header className="masthead text-white text-center">
+          <div className="overlay" />
+          <div className="container">
+            <div className="row">
+              <div className="col-xl-9 mx-auto">
+                <h1 className="mb-5">Our Services And Cars</h1>
+              </div>
+              <div className="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                <form>
+                  <div className="form-row">
+                    <div className="col-12 col-md-9 mb-2 mb-md-0">
+                      <input type="email" className="form-control form-control-lg" placeholder="Enter your email..." />
+                    </div>
+                    <div className="col-12 col-md-3">
+                     <Link to="/signup"> <button type="submit" className="btn btn-block btn-lg btn-primary">Sign up!</button></Link>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
-            <div class="col-md-4">
-                <img class="img-responsive" src="https://www.compare.com/wp-content/uploads/2016/04/car-repair.jpg"/>          
-                <h3>Construction</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus temporibus perferendis nesciunt quam repellendus nulla nemo ipsum odit corrupti consequuntur possimus</p>        
+          </div>
+        </header>
+        {/* Icons Grid */}
+        <section className="features-icons bg-light text-center">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-4">
+                <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                  <div className="features-icons-icon d-flex">
+                    <i className="icon-screen-desktop m-auto text-primary" />
+                  </div>
+                  <h3>Super Customer service</h3>
+                  <p className="lead mb-0">superior customer service, unmatched by any other company in the entire region.!!</p>
+                </div>
+              </div>
+              <div className="col-lg-4">
+                <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                  <div className="features-icons-icon d-flex">
+                    <i className="icon-layers m-auto text-primary" />
+                  </div>
+                  <h3>Skilled Technicians</h3>
+                  <p className="lead mb-0"> highly professional attention to your demands!</p>
+                </div>
+              </div>
+              <div className="col-lg-4">
+                <div className="features-icons-item mx-auto mb-0 mb-lg-3">
+                  <div className="features-icons-icon d-flex">
+                    <i className="icon-check m-auto text-primary" />
+                  </div>
+                  <h3>Easy to Use</h3>
+                  <p className="lead mb-0">Whatever your car needs, we can get the job done!</p>
+                </div>
+              </div>
             </div>
-            <div class="col-md-4 md-margin-bottom-40">
-              <img class="img-responsive" src="" alt=""/>  
-                <h3>Finance</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus temporibus perferendis nesciunt quam repellendus nulla nemo ipsum odit corrupti consequuntur possimus</p>        
+          </div>
+        </section>
+        {/* Image Showcases */}
+        <section className="showcase">
+          <div className="container-fluid p-0">
+            <div className="row no-gutters">
+              <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{backgroundImage: 'url("http://automotive-experts.com/wp-content/uploads/2018/03/Best-Vehicle-Repair-Service-660x495.jpg")'}} />
+              <div className="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>!00% customer satisfaction!</h2>
+                <p className="lead mb-0">When you you order from us we guarantee you 100% customer satisfaction!  SImply call us or contact us</p>
+              </div>
             </div>
-        </div>
-       
-        <hr classname="margin-bottom-50">
+            <div className="row no-gutters">
+              <div className="col-lg-6 text-white showcase-img" style={{backgroundImage: 'url("https://www.nissan.ca/content/dam/nissan/ca/owners/navigation/service-plans/extended_protection_plans.png")'}} />
+              <div className="col-lg-6 my-auto showcase-text">
+                <h2>Updated For Newest theft Protection!</h2>
+                <p className="lead mb-0">Ultimate Anti-Theft Protection !! </p>
+              </div>
+            </div>
+            <div className="row no-gutters">
+              <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{backgroundImage: 'url("img/bg-showcase-3.jpg")'}} />
+              <div className="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>Newest Cars Available!</h2>
+                <p className="lead mb-0">Lorem ipsum ish shotem istatel </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Testimonials */}
+        <section className="testimonials text-center bg-light">
+         
+        </section>
+        {/* Call to Action */}
+        <section className="call-to-action text-white text-center">
+          <div className="overlay" />
+          <div className="container">
+            <div className="row">
+              <div className="col-xl-9 mx-auto">
+                <h2 className="mb-4">Ready to get started? Sign up now!</h2>
+              </div>
+              <div className="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                <form>
+                  <div className="form-row">
+                    <div className="col-12 col-md-9 mb-2 mb-md-0">
+                      <input type="email" className="form-control form-control-lg" placeholder="Enter your email..." />
+                    </div>
+                    <div className="col-12 col-md-3">
+                <Link to="/signup"> <button type="submit" className="btn btn-block btn-lg btn-primary">Sign up!</button></Link>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+       </div>
 
-  
-        <div classname="row">
-            <div classname="col-sm-4 info-blocks">
-                <i classname="icon-info-blocks fa fa-user"></i>
-                <div classname="info-blocks-in">
-                    <h3>Awesome Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-            <div classname="col-sm-4 info-blocks">
-                <i classname="icon-info-blocks fa fa-star"></i>
-                <div classname="info-blocks-in">
-                    <h3>FontAwesome</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-            <div classname="col-sm-4 info-blocks">
-                <i classname="icon-info-blocks fa fa-book"></i>
-                <div classname="info-blocks-in">
-                    <h3>Bootstrap</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-        </div>
-        
-        <div classname="row">
-            <div classname="col-sm-4 info-blocks">
-                <i classname="icon-info-blocks fa fa-home"></i>
-                <div classname="info-blocks-in">
-                    <h3>SEO Ready</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-            <div classname="col-sm-4 info-blocks">
-                <i classname="icon-info-blocks fa fa-flag-o"></i>
-                <div classname="info-blocks-in">
-                    <h3>Fully Responsive</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-            <div classname="col-sm-4 info-blocks">
-                <i classname="icon-info-blocks fa fa-thumbs-o-up"></i>
-                <div classname="info-blocks-in">
-                    <h3>CSS3 + HTML5</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-        </div>
-     
-        </div> 
-    </div>
-    </section>
+   
+
+       );
+  }
+}

@@ -53,53 +53,42 @@ this.setState({info2:"" , msg:"more"})
   }
   render(){
     return(
-      <div className="services">
-        <div className="container">
-          <div className="row">
-            <div className="col-3">
-              <Card>
-                <CardImg top width="100%" src="https://s3.amazonaws.com/cartool/new_car.jpg" alt="New Car" />
-                <CardBody>
-                  <CardTitle>Find New Vehicle</CardTitle>
-               <Link to="/Cars">   <Button className='btn-success'> Cars  </Button></Link>
-                   <p> {this.state.info3} </p>
-                </CardBody>
-              </Card>
-            </div>
-            <div className="col-3">
-              <Card>
-                <CardImg top width="100%" src="https://s3.amazonaws.com/cartool/finance.jpg" alt="Finance" />
-                <CardBody>
-                  <CardTitle>Financing</CardTitle>
-                  <Button className='btn-success' onClick={this.showMore}>{this.state.msg}</Button>
-                  <p> {this.state.info} </p>
-                </CardBody>
-              </Card>
-            </div>
-            <div className="col-3">
-              <Card>
-                <CardImg top width="100%" src="https://s3.amazonaws.com/cartool/test_drive.jpg" alt="Test Drive" />
-                <CardBody>
-                  <CardTitle>Schedule Test Drive</CardTitle>
-                <Link to="/contact">  <Button className='btn-success'> Test Drive </Button> </Link>
-
-                   <p> {this.state.info2} </p>
-                </CardBody>
-              </Card>
-            </div>
-            <div className="col-3">
-              <Card>
-                <CardImg top width="100%" src="https://s3.amazonaws.com/cartool/service.jpg" alt="Service" />
-                <CardBody>
-                  <CardTitle>Schedule Service</CardTitle>
-                  <Button className='btn-success' onClick={this.showMore3}>{this.state.msg}</Button>
-                   <p> {this.state.info4} </p>
-                </CardBody>
-              </Card>
-            </div>
-          </div>
+   <div>
+<br></br>
+<br></br>
+<div className="container-fluid">
+  <div className="row">
+    <div className="card-deck">
+      <div className="card">
+        <img  id="f" className="card-img-top" src="https://s3.amazonaws.com/cartool/new_car.jpg" alt="Card image cap"/>
+        <div className="card-block">
+          <h4 className="card-title">Find New Vehicle</h4>
+          <p className="card-text">asddf</p>
+          <p className="card-text">   <Link to="/Cars"> <Button className='btn-success'> Cars  </Button></Link> </p> 
         </div>
       </div>
+      <div className="card">
+        <img  id="f"className="card-img-top" src="https://s3.amazonaws.com/cartool/finance.jpg" alt="Card image cap"/>
+        <div className="card-block">
+          <h4 className="card-title">Financing</h4>
+          <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              <Button className='btn-success' onClick={this.showMore}>{this.state.msg}</Button>
+                  <p> {this.state.info} </p>
+        </div>
+      </div>
+      <div className="card">
+        <img id="f" className="card-img-top" src="https://s3.amazonaws.com/cartool/test_drive.jpg" alt="Test Drive"/>
+        <div className="card-block">
+          <h4 className="card-title">Schedule Test Drive</h4>
+          <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <Link to="/contact">  <Button className='btn-success'> Test Drive </Button> </Link>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
     );
   }
-ore}
+}

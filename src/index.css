@@ -431,3 +431,24 @@ p {
 .bg-light {
     background-color: #d6d3d3 !important;
 }
+
+
+.card {
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+
+}
+.card img {
+  width: 100%;
+}
+
+.card-deck {
+    display: table;
+    margin-left: 300px;
+    width: 75%;
+    margin-bottom: .75rem;
+    table-layout: fixed;
+    border-spacing: 1.25rem 0;
+}
+

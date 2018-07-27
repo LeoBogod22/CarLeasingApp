@@ -43,7 +43,7 @@ export default class Service extends Component{
               <div className="col-lg-4">
                 <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                   <div className="features-icons-icon d-flex">
-                    <i className="icon-screen-desktop m-auto text-primary" />
+                    <i className="fab fa-accusof" />
                   </div>
                   <h3>Super Customer service</h3>
                   <p className="lead mb-0">superior customer service, unmatched by any other company in the entire region.!!</p>
@@ -76,8 +76,8 @@ export default class Service extends Component{
             <div className="row no-gutters">
               <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{backgroundImage: 'url("http://automotive-experts.com/wp-content/uploads/2018/03/Best-Vehicle-Repair-Service-660x495.jpg")'}} />
               <div className="col-lg-6 order-lg-1 my-auto showcase-text">
-                <h2>!00% customer satisfaction!</h2>
-                <p className="lead mb-0">When you you order from us we guarantee you 100% customer satisfaction!  SImply call us or contact us</p>
+                <h2>100% customer satisfaction!</h2>
+                <p className="lead mb-0">When you you order from us we guarantee you 100% customer satisfaction!  SImply call us or contact us for more information@</p>
               </div>
             </div>
             <div className="row no-gutters">
@@ -88,7 +88,7 @@ export default class Service extends Component{
               </div>
             </div>
             <div className="row no-gutters">
-              <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{backgroundImage: 'url("img/bg-showcase-3.jpg")'}} />
+              <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{backgroundImage: 'url("https://pictures.dealer.com/r/reagordykesautogroup/0967/b4ba1f27afc4414f9f6a7d5d276ddc3ex.jpg")'}} />
               <div className="col-lg-6 order-lg-1 my-auto showcase-text">
                 <h2>Newest Cars Available!</h2>
                 <p className="lead mb-0">Lorem ipsum ish shotem istatel </p>

@@ -221,12 +221,11 @@ const images = [
                                 <div className="card-header text-success"><h5>Reach Us</h5></div>
                                 <div className="card-body text-primary">
                                     <div className="row">
-                                        <h5>Phone: (602) 362-2670</h5>
+                                        <h5>Phone: 1.516.765.1003 </h5>
                                     </div>
                                     <div className="row">
                                         <div className="md=12">
-                                            515 E Grant St,
-                                            Phoenix, AZ 85004
+                                           830 Willis Ave, Albertson, NY 11507
                                         </div>
                                     </div>
                                     <br/>
@@ -237,7 +236,7 @@ const images = [
                       
       ) : (
       
-        <Link to="/login"> Login to save  </Link> 
+        <p> <Link to="/login"> Login to save  </Link> </p>
    
       )}
                                     <div className="row">
@@ -286,7 +285,7 @@ const images = [
                             <div className="card-body">
                                 <Row>
                                     <Col md="6">
-                                        <Icon className="text-muted" icon={facebook} size={90}/>
+                                   <a href=" https://www.facebook.com/dialog/share?app_id=87741124305&href={window.location.href}"><Icon className="text-muted" icon={facebook} size={90}/></a>
                                     </Col>
                                     <Col md="6">
                                         <Icon className="text-muted" icon={twitter} size={90}/>
@@ -294,7 +293,7 @@ const images = [
                                 </Row>
                                 <Row>
                                     <Col md="6">
-                                        <Icon className="text-muted" icon={instagram} size={90}/>
+                              <Icon className="text-muted" icon={instagram} size={90}/>
                                     </Col>
                                     <Col md="6">
                                         <Icon className="text-muted" icon={googlePlus} size={90}/>

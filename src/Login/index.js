@@ -10,7 +10,7 @@ class LogInContainer extends Component {
       const user = await app
         .auth()
         .signInWithEmailAndPassword(email.value, password.value);
-        alert("you have sucsesfully signed up!! ")
+        alert("you have sucsesfully logged in!! ")
       this.props.history.push("/home");
     } catch (error) {
       alert(error);

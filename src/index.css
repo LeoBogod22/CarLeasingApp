@@ -241,7 +241,7 @@ header.masthead h1 {
   display: inline-block;
   cursor: pointer;
 }
-#d { color: #7c795d; font-family: 'Trocchi', serif; font-size: 45px; font-weight: normal; text-align:center; line-height: 48px; margin: 0; }
+#d { color: #7c795d; font-family: 'Trocchi', serif; font-size: 55px; font-weight: normal; text-align:center; line-height: 48px; margin: 0; }
 
 
 
@@ -440,7 +440,6 @@ p {
 
 }
 .card img {
-  width: 100%;
 }
 
 .card-deck {
@@ -452,3 +451,53 @@ p {
     border-spacing: 1.25rem 0;
 }
 
+p{
+
+word-spacing: 10px;
+line-height: 44px;
+
+
+}
+
+#crap2{
+-moz-box-shadow:inset 0px 1px 0px 0px #cf866c;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #cf866c;
+  box-shadow:inset 0px 1px 0px 0px #cf866c;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #d0451b), color-stop(1, #bc3315));
+  background:-moz-linear-gradient(top, #d0451b 5%, #bc3315 100%);
+  background:-webkit-linear-gradient(top, #d0451b 5%, #bc3315 100%);
+  background:-o-linear-gradient(top, #d0451b 5%, #bc3315 100%);
+  background:-ms-linear-gradient(top, #d0451b 5%, #bc3315 100%);
+  background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d0451b', endColorstr='#bc3315',GradientType=0);
+  background-color:#d0451b;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  border:1px solid #942911;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:13px;
+  padding:11px 24px;
+  text-decoration:none;
+}
+
+#fish{
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    margin-left: 600px;
+    text-align: center;
+    border-bottom-width: 12x;
+    width: 40%;
+    word-spacing: 120%;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+label {
+  font-size: 15px;
+    display: inline-block;
+    margin-bottom: .5rem;
+}

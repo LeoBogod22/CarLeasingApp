@@ -26,7 +26,7 @@ export default class NavigatioBar extends React.Component {
       currentUser: null,
        redirect: false,
  
-    
+     Name: '',
       isOpen: false
     
    
@@ -51,11 +51,12 @@ export default class NavigatioBar extends React.Component {
 
 componentWillMount() {
 app.auth().onAuthStateChanged((user) => {
-     
- 
+
     if (user) {
       this.setState({
         currentUser: user,
+
+     
         authenticated: true
       })
     } else {
@@ -79,7 +80,7 @@ app.auth().onAuthStateChanged((user) => {
           <div className="container">
             <NavbarBrand href="/">
             <Icon className="car-icon" icon={car}/>
-             G66 CARS</NavbarBrand>
+            Direct Motor Group</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -107,11 +108,12 @@ app.auth().onAuthStateChanged((user) => {
                         <Button classname="btn-btn-primary">SignOut </Button>
                         <br></br> 
                         <Link to="/user"> my profile </Link>
+
                         </DropdownItem>
       ) : (
       <DropdownItem>
-        <Link to="/login"> Login  </Link> 
-         <Link to="/signup"> sign Up </Link> 
+        <Link to="/login"> LOGIN  </Link> <br></br>
+         <Link to="/signup"> SIGN UP</Link> 
        </DropdownItem>
       )}
      

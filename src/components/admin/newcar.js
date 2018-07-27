@@ -128,7 +128,15 @@ ext_color: this.state.ext_color,
                       <option>Lamborghini</option>
                       <option>Maserati</option>
                       <option>Subaru</option>
+                      <option> Nissan </option>
+                      <option> Jeep </option>
+                      <option> Land Rover </option>
+                      <option> Mercedes </option>
+                      <option> Infiniti </option> 
                       <option>Toyota</option>
+                      <option>BMW </option>
+                      <option> Ford </option>
+                      <option> Cadillac </option> 
                     </Input>
                   </FormGroup>
                 </Col>
@@ -142,6 +150,17 @@ ext_color: this.state.ext_color,
                       <option value="" disabled selected>Select Model</option>
                       <option>Accord</option>
                       <option>Odyssey</option>
+                      <option> Qx-30</option>
+                      <option>supra</option>
+                      <option>elantra</option>
+                      <option> Disocvery Sport</option>
+                      <option>X5</option>
+                      <option> A7 </option>
+                      <option>Ghibli </option>
+                      <option> S clasS </option>
+                      <option> Maxima </option>
+                      <option> ALtima </option>
+                        <option> Grand Charaokee </option>
                       <option>CR-V</option>
                       <option>4 Runner</option>
                       <option>Avalon</option>
@@ -149,12 +168,15 @@ ext_color: this.state.ext_color,
                       <option>C-Class</option>
                       <option>A3</option>
                       <option>Q3</option>
+                      <option>740i</option>
                       <option>A5</option>
                       <option>Gran Turismo</option>
                       <option>Levante</option>
+                      <option> Mondeo </option>
                       <option>Aventador</option>
                       <option>Outback</option>
                       <option>Corolla</option>
+                            <option>Camry</option>
                     </Input>
                   </FormGroup>
                 </Col>

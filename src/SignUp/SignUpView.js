@@ -3,7 +3,7 @@ import React from "react";
 const SignUpView = ({ onSubmit }) => {
   return (
     <div>
-      <h1>Sign up</h1>
+      <h1 id="fish">Sign up</h1>
       <form id="style" classname="form-style-8" onSubmit={onSubmit}>
         <label>
           Email
@@ -23,7 +23,7 @@ const SignUpView = ({ onSubmit }) => {
             placeholder="Password"
           />
         </label>
-        <button classname="btn" type="submit">Sign Up</button>
+        <button  id="crap2"classname="btn btn-primary" type="submit">Sign Up</button>
       </form>
     </div>
   );

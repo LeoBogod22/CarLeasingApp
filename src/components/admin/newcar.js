@@ -47,6 +47,9 @@ let carid = CarsRef.push().key;
       wiper: this.state.wiper,
       sale: this.state.sale,
       headlight: this.state.headlight,
+      model: this.state.model,
+      elect_stab: this.state.elect_stab,
+      wiper: this.state.wiper,
       make: this.state.make,
       seat: this.state.seat,
       tire_pressure: this.state.tire_pressure,
@@ -134,7 +137,7 @@ ext_color: this.state.ext_color,
                       <option> Mercedes </option>
                       <option> Infiniti </option> 
                       <option>Toyota</option>
-                      <option>BMW </option>
+                      <option>BMW </option>       <option>KIA</option>
                       <option> Ford </option>
                       <option> Cadillac </option> 
                     </Input>
@@ -159,6 +162,7 @@ ext_color: this.state.ext_color,
                       <option>Ghibli </option>
                       <option> S clasS </option>
                       <option> Maxima </option>
+                      <option> Optima </option>
                       <option> ALtima </option>
                         <option> Grand Charaokee </option>
                       <option>CR-V</option>
@@ -169,6 +173,7 @@ ext_color: this.state.ext_color,
                       <option>A3</option>
                       <option>Q3</option>
                       <option>740i</option>
+                      <option> Escape</option>
                       <option>A5</option>
                       <option>Gran Turismo</option>
                       <option>Levante</option>

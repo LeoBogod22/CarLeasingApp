@@ -107,7 +107,7 @@ app.auth().onAuthStateChanged((user) => {
                     <DropdownItem onClick={this.signout}>
                         <Button classname="btn-btn-primary">SignOut </Button>
                         <br></br> 
-                        <Link to="/user"> my profile </Link>
+                        <Link to="/user"> my cars </Link>
 
                         </DropdownItem>
       ) : (

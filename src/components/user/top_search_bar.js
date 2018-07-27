@@ -47,6 +47,9 @@ else {
       Mercedes: [ {body: "Convertible"}, {body: "Coupe"} ],
       Subaru: [ {body: "Hatchback"} ],
       BMW: [ {body: "Hatchback"} ],
+      Nissan: [ {body: "Hatchback"} ],
+      Cadillac:  [ {body: "Hatchback"} ],
+      Jeep: [ {body: "SUV"}, {body: "Coupe"} ],
       Toyota: [ {body: "SUV"}, {body: "Sedan"}, {body: "Truck"} ]
     }
 
@@ -69,7 +72,7 @@ else {
       })
     }
 
-    
+
 
     return(
     <div>

@@ -102,12 +102,12 @@ CarsRef.on('value', snap => {
                                 <td>{car.ext_color}</td>
                               </tr>
                               <tr>
-                                <td>Interior Color:</td>
-                                <td>{car.int_color}</td>
+                                <td>Model:</td>
+                                <td>{car.model}</td>
                               </tr>
                               <tr>
-                                <td>Transmission:</td>
-                                <td>{car.transmission}</td>
+                                <td>Make:</td>
+                                <td>{car.make}</td>
                               </tr>
                               <tr>
                                 <td>VIN:</td>

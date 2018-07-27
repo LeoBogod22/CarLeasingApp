@@ -165,8 +165,8 @@ CarsRef.on('value', snap => {
                                 <td className="text-right" />
                                 <td className="text-right">
                                 <Link to={{ pathname:`/cars/${car.id}`, state: { car } }} >
-                                    <Button className="btn btn-success">
-                                      More
+                                    <Button id="crap" className="btn btn-success">
+                                      View
                                     </Button>
                                   </Link>
                                 </td>

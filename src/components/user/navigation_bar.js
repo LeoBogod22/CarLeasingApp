@@ -72,7 +72,6 @@ app.auth().onAuthStateChanged((user) => {
      if (redirect) {
        return <Redirect to='/signout'/>;
      }
- alert(this.state.authenticated)
  const authenticated = this.state.authenticated;
     return (
       <div>

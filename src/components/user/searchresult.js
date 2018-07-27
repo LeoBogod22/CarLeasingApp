@@ -163,8 +163,8 @@ class Searchresults extends Component {
                                 <td className="text-right" />
                                 <td className="text-right">
                                   <Link to={`/cars/${car.id}`}>
-                                    <Button className="btn btn-success">
-                                      More
+                                    <Button id="crap" className="btn btn-success">
+                                      View
                                     </Button>
                                   </Link>
                                 </td>

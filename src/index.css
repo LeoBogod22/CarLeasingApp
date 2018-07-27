@@ -19,7 +19,7 @@ body {
 }
 .top-search-bar {
     background-color: #d3d5d4;
-    border-top: 2px solid #31020d;
+   
     padding: 0.5em;
     width: 100%;
     position: relative;
@@ -30,10 +30,14 @@ body {
 
   text-align: center;
 }
+
 .services{
   padding: 5em;
 }
-
+.react-slideshow-wrapper .images-wrap div img {
+    width: 100%;
+    height: 600px;
+}
 
 #style input[type="text"],
 #style input[type="email"] {
@@ -402,8 +406,14 @@ p {
   height: auto;
   border-radius: 5px;
 }
+
+
+.navbar-nav .nav-item+.nav-item {
+    margin-left: 1rem;
+    font-stretch: 1px;
+    font-size: 15px;
+    }
 .table td {
-  border: none;
   line-height: 1em;
 }
 .social-icons{
@@ -411,6 +421,12 @@ p {
   color: red;
 }
 
+#crap{
+      position: relative;
+    top: 100px;
+    left: -500px;
+    width: 75%;
+}
 
 .bg-light {
     background-color: #d6d3d3 !important;

@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { CarsRef, authRef, provider } from "../components/admin/reference";
 export const GET_CARS_PENDING = 'GET_CARS_PENDING'
 export const GET_CARS_SUCCESS = 'GET_CARS_SUCCESS'
+export const GET_SEARCH_RESULTS = 'GET_SEARCH_RESULTS'
 export const GET_SINGLE_CAR = 'GET_SINGLE_CAR'
 export const ADD_CAR_PENDING = 'ADD_CAR_PENDING'
 export const ADD_CAR_SUCCESS = 'ADD_CAR_SUCCESS'
@@ -49,6 +50,20 @@ export function  getsinglecar(id){
   }
 }
 
+export function  search(make) {
+return async dispatch => {
+
+
+  dispatch({ type: GET_SEARCH_RESULTS });
+     CarsRef.child(make).once("value", function(snapshot) {
+    dispatch({
+      type: GET_SEARCH_RESULTS,
+      payload: snapshot.val()
+   })
+  
+ })
+  }
+}
 
 export const createCar = (newCar) => {
   return async (dispatch) => {

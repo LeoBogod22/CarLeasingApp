@@ -1,31 +1,26 @@
 import React from "react";
 import NavigationBar from '../components/user/navigation_bar';
 import TopSearchBar from '../components/user/top_search_bar';
+import { Redirect,Link } from 'react-router-dom'
+
 const LogInView = ({ onSubmit }) => {
   return (
-    <div>
-
-      <h1 id="fish">Log In</h1>
-      <form id="style" onSubmit={onSubmit}>
-        <label>
-          Email
-          <input
-            style={{ width: "100%" }}
-            name="email"
-            type="email"
-            placeholder="Email"
-          />
-        </label>
-        <label>
-          Password
-          <input
-            style={{ width: "100%" }}
-            name="password"
-            type="password"
-            placeholder="Password"
-          />
-        </label>
-        <button bsStyle="primary" id="c" type="submit">Log in</button>
+    <div className="container">
+      <form id="style" className="width-500px" onSubmit={onSubmit}>
+        <h3 className="text-center text-success">Login</h3>
+        <div className="form-group">
+          <label>Email</label>
+          <input name="email" type="email" className="form-control"/>
+        </div>
+        <div className="form-group">
+          <label>Password</label>
+          <input name="password" type="password" className="form-control"/>
+        </div>
+        <div className="text-center">
+          <button id="btn-gradient" type="submit">Login</button>
+        </div>
+        <hr/>
+        <p className="text-center mb-0">Dont have account yet? <Link to="/signup">Create Here</Link></p>
       </form>
     </div>
   );

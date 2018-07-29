@@ -37,7 +37,7 @@ else {
 
 }
  
-    let searchMake = ["Audi","Honda","Lamborghini","Maserati", "Subaru","Toyota","Ford","Infiniti","Cadillac","Nissan","Jeep","Mercedes","BMW"];
+    let searchMake = ["Audi","Honda","Lamborghini","Maserati", "Subaru","Toyota"];
 
     let cars = {
       Audi: [ {body: "Sedan"}, {body: "Coupe"}, {body: "SUV"} ],
@@ -46,14 +46,8 @@ else {
       Maserati: [ {body: "Coupe"}, {body: "SUV"} ],
       Mercedes: [ {body: "Convertible"}, {body: "Coupe"} ],
       Subaru: [ {body: "Hatchback"} ],
-      BMW: [ {body: "Hatchback"} ],
-      Nissan: [ {body: "Hatchback"} ],
-      Cadillac:  [ {body: "Hatchback"} ],
-      Jeep: [ {body: "SUV"}, {body: "Coupe"} ],
       Toyota: [ {body: "SUV"}, {body: "Sedan"}, {body: "Truck"} ]
     }
-
-
 
     let makes = searchMake.map((make, i) => {
       return (
@@ -71,8 +65,6 @@ else {
           </option>)
       })
     }
-
-
 
     return(
     <div>

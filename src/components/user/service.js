@@ -76,22 +76,22 @@ export default class Service extends Component{
             <div className="row no-gutters">
               <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{backgroundImage: 'url("http://automotive-experts.com/wp-content/uploads/2018/03/Best-Vehicle-Repair-Service-660x495.jpg")'}} />
               <div className="col-lg-6 order-lg-1 my-auto showcase-text">
-                <h2>100% customer satisfaction!</h2>
-                <p className="lead mb-0">When you you order from us we guarantee you 100% customer satisfaction!  SImply call us or contact us for more information@</p>
+                <h2>Auto Body Repair</h2>
+                <p className="lead mb-0">Our technicians are certified and provide detailed, highly professional attention to your demands. We advocate on behalf of the insured, and we’ll pick up and deliver you car right from your home or office. You need your car back as soon as possible, and we make sure you’ll have it back and running in the timeliest manner possible.</p>
               </div>
             </div>
             <div className="row no-gutters">
               <div className="col-lg-6 text-white showcase-img" style={{backgroundImage: 'url("https://www.nissan.ca/content/dam/nissan/ca/owners/navigation/service-plans/extended_protection_plans.png")'}} />
               <div className="col-lg-6 my-auto showcase-text">
-                <h2>Updated For Newest theft Protection!</h2>
-                <p className="lead mb-0">Ultimate Anti-Theft Protection !! </p>
+                <h2>Anti Theft Protection!</h2>
+                <p className="lead mb-0">In the United States, two vehicles are stolen every minute. This innovative system protects your vehicle against theft and provides you benefits in the unlikely event it is stolen. </p>
               </div>
             </div>
             <div className="row no-gutters">
               <div className="col-lg-6 order-lg-2 text-white showcase-img" style={{backgroundImage: 'url("https://pictures.dealer.com/r/reagordykesautogroup/0967/b4ba1f27afc4414f9f6a7d5d276ddc3ex.jpg")'}} />
               <div className="col-lg-6 order-lg-1 my-auto showcase-text">
-                <h2>Newest Cars Available!</h2>
-                <p className="lead mb-0">Lorem ipsum ish shotem istatel </p>
+                <h2>Insurance</h2>
+                <p className="lead mb-0">Choosing the right auto insurance can be tough. Direct Motor Group makes it easy with a fast, accurate quote that helps you get car insurance discounts as you go.  </p>
               </div>
             </div>
           </div>

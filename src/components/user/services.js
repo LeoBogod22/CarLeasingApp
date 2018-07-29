@@ -25,7 +25,7 @@ this.setState({counter: this.state.counter+1})
 console.log("counter is" + this.state.counter);
 
 if (this.state.counter%2===0) {
-this.setState({info:"we have many Vehicles in our shop. Cheap Price and Finance Available. " , msg:"Less"})
+this.setState({info:"Neweset Vehicles available! including our 2018 Bmw! " , msg:"Less"})
 
 }
 
@@ -63,7 +63,7 @@ this.setState({info2:"" , msg:"more"})
         <img  id="f" className="card-img-top" src="https://s3.amazonaws.com/cartool/new_car.jpg" alt="Card image cap"/>
         <div className="card-block">
           <h4 className="card-title">Find New Vehicle</h4>
-          <p className="card-text">asddf</p>
+          <p className="card-text">Over 1000 Vehicles available!</p>
           <p className="card-text">   <Link to="/Cars"> <Button className='btn-success'> Cars  </Button></Link> </p> 
         </div>
       </div>
@@ -71,7 +71,7 @@ this.setState({info2:"" , msg:"more"})
         <img  id="f"className="card-img-top" src="https://s3.amazonaws.com/cartool/finance.jpg" alt="Card image cap"/>
         <div className="card-block">
           <h4 className="card-title">Financing</h4>
-          <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <p className="card-text">We Help with  getting loans and have the best rates! </p>
               <Button className='btn-success' onClick={this.showMore}>{this.state.msg}</Button>
                   <p> {this.state.info} </p>
         </div>
@@ -80,7 +80,7 @@ this.setState({info2:"" , msg:"more"})
         <img id="f" className="card-img-top" src="https://s3.amazonaws.com/cartool/test_drive.jpg" alt="Test Drive"/>
         <div className="card-block">
           <h4 className="card-title">Schedule Test Drive</h4>
-          <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <p className="card-text">Test drive availalbe 5 days a week ! Feel free to shcedule one now! </p>
         <Link to="/contact">  <Button className='btn-success'> Test Drive </Button> </Link>
 
         </div>

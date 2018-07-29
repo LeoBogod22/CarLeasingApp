@@ -8,6 +8,7 @@ import firebase from 'firebase';
 // User Components
 import NavigationBar from './components/user/navigation_bar';
 import TopSearchBar from './components/user/top_search_bar';
+import parts from './components/user/parts';
 import FooterTop from './components/user/footer_top';
 import FooterBottom from './components/user/footer_bottom';
 import UserHomePage from './components/user/home';
@@ -102,6 +103,7 @@ class App extends Component {
                     <Route exact path='/cars/:id' component={OneCar} />
                     <Route exact path='/contact' component={ContactForm}/>
                     <Route exact path='/user' component={User}/>
+                     
                     <Route exact path='/service' component={Service}/>
                     <FooterTop />
                     <FooterBottom />

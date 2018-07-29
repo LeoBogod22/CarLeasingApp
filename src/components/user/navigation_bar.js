@@ -26,7 +26,7 @@ export default class NavigatioBar extends React.Component {
       currentUser: null,
        redirect: false,
  
-     Name: '',
+    
       isOpen: false
     
    
@@ -51,12 +51,11 @@ export default class NavigatioBar extends React.Component {
 
 componentWillMount() {
 app.auth().onAuthStateChanged((user) => {
-
+     
+ 
     if (user) {
       this.setState({
         currentUser: user,
-
-     
         authenticated: true
       })
     } else {
@@ -76,11 +75,11 @@ app.auth().onAuthStateChanged((user) => {
  const authenticated = this.state.authenticated;
     return (
       <div>
-        <Navbar color="primary" dark expand="md">
+        <Navbar color="danger" dark expand="md">
           <div className="container">
             <NavbarBrand href="/">
             <Icon className="car-icon" icon={car}/>
-            Direct Motor Group</NavbarBrand>
+             G66 CARS</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -88,13 +87,13 @@ app.auth().onAuthStateChanged((user) => {
                   <NavLink href="/cars">CARS</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">FINANCE</NavLink>
+                  <NavLink href="/contact">SELL CAR</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/service">SERVICE</NavLink>
+                  <NavLink href="/service">SERVICES</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/">PARTS</NavLink>
+                  <NavLink href="/">HOME</NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav>
                   <DropdownToggle nav caret>
@@ -102,30 +101,25 @@ app.auth().onAuthStateChanged((user) => {
                   </DropdownToggle>
                      
                   <DropdownMenu >
-                   {authenticated ? ( 
-
-                    <DropdownItem onClick={this.signout}>
-                        <Button classname="btn-btn-primary">SignOut </Button>
-                        <br></br> 
-                        <Link to="/user"> my cars </Link>
-
-                        </DropdownItem>
-      ) : (
-      <DropdownItem>
-        <Link to="/login"> LOGIN  </Link> <br></br>
-         <Link to="/signup"> SIGN UP</Link> 
-       </DropdownItem>
-      )}
-     
+                    {authenticated ? ( 
+                    <DropdownItem>
+                        <Button className="btn-btn-primary btn-block" onClick={this.signout}>Sign Out </Button>
+                    </DropdownItem>
+                    ) : (
+                         <Link to="/login" className="dropdown-item"> Login </Link> 
+                    )}
+                    {authenticated ? ( 
+                        <Link to="/user" className="dropdown-item"> my profile </Link>
+                    ) : (
+                         <Link to="/signup" className="dropdown-item"> Sign Up </Link> 
+                    )}
                     <DropdownItem>
                       ABOUT US
                     </DropdownItem>
-                    <DropdownItem>
-                      STAFF
-                    </DropdownItem>
-                    <DropdownItem>
+                    
+                    <Link to="/contact"> <DropdownItem>
                       CONTACT US
-                    </DropdownItem>
+                    </DropdownItem> </Link>
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </Nav>

@@ -1,3 +1,4 @@
+//done
 import React, { Component } from 'react';
 import { Form, FormGroup, Input, Alert, Label } from 'reactstrap';
 import { bindActionCreators } from 'redux';
@@ -10,6 +11,9 @@ class ContactForm extends Component {
     uname: '',
     uemail: '',
     uphone: '',
+    msg:'',
+
+      isHidden: true,
     uinterest: '',
     umessage: '',
     followup: false,
@@ -42,8 +46,9 @@ class ContactForm extends Component {
         }).then((response)=>{
           console.log(response.data)
             if (response.data.msg === 'success'){
+
                this.setState({
-      alertMsg: true
+     isHidden: !this.state.isHidden
     }) 
                
             }else if(response.data.msg === 'fail'){
@@ -59,83 +64,62 @@ class ContactForm extends Component {
   }
 
   render(){
-
     return(
-      <div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <Form id="d" method="POST" onSubmit={this.handleSubmit.bind(this)} method="POST">
+      <div className={(this.props.showTitle == 'false' ? 'contact-form-included' : 'container')}>
+      <Form id="style" method="POST" onSubmit={this.handleSubmit.bind(this)}>
+        <h3 className="text-center text-success header-text">Contact Us</h3>
         <div className="row">
-          <div className="col-3">
-            <FormGroup>
-              <Label for="examplename">Your Name</Label>
-              <Input type="text" id="examplename"
+          <div className="col-md-6">
+            <div className="form-group">
+            <label>Your Name</label>
+            <input type="text" className="form-control"
                 value={this.state.uname}
-                onChange={(e) => this.setState({uname: e.target.value})}
-              />
-            </FormGroup>
+                onChange={(e) => this.setState({uname: e.target.value})}/>
+            </div>
           </div>
-          <div className="col-3">
-            <FormGroup>
-              <Label for="exampleEmail">Email</Label>
-              <Input type="email" id="exampleEmail"
+          <div className="col-md-6">
+            <div className="form-group">
+              <Label>Email</Label>
+              <Input type="email" className="form-control"
                 value={this.state.uemail}
-                onChange={(e) => this.setState({uemail: e.target.value})}
-              />
-            </FormGroup>
+                onChange={(e) => this.setState({uemail: e.target.value})}/>
+            </div>
           </div>
-          <div className="col-3">
-            <FormGroup>
-              <Label for="examplephone">Phone</Label>
-              <Input type="text" id="examplephone"
+          <div className="col-md-6">
+            <div className="form-group">
+              <Label>Phone</Label>
+              <Input type="text" className="form-control"
                 value={this.state.uphone}
-                onChange={(e) => this.setState({uphone: e.target.value})}
-              />
-            </FormGroup>
+                onChange={(e) => this.setState({uphone: e.target.value})}/>
+            </div>
           </div>
-          <div className="col-3">
-            <FormGroup>
-              <Label for="examplecarid">Car ID</Label>
-              <Input type="text" id="examplecarid"
+          <div className="col-md-6">
+            <div className="form-group">
+              <Label>Car ID or Model</Label>
+              <Input type="text" className="form-control"
                 value={this.state.uinterest}
-                onChange={(e) => this.setState({uinterest: e.target.value})}
-              />
-            </FormGroup>
+                onChange={(e) => this.setState({uinterest: e.target.value})}/>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="col-10">
-            <FormGroup>
-              <Label for="specialmessage">Message</Label>
-              <Input type="textarea" id="specialmessage"
+          <div className="col-12">
+            <div className="form-group">
+              <Label>Your Message</Label>
+              <Input type="textarea"
                 value={this.state.umessage}
-                onChange={(e) => this.setState({umessage: e.target.value})}
-              />
-            <br/>
-            </FormGroup>
+                onChange={(e) => this.setState({umessage: e.target.value})}/>
+            </div>
           </div>
-          <div className="col-2">
-            <br/>
-            <FormGroup>
-
-      <br></br>
-              <button type="submit" class="btn btn-success">Submit</button>
-            </FormGroup>
+          <div className="col-12">
+            <div className="text-center">
+              <button id="btn-gradient" type="submit">Submit</button>
+            </div>
           </div>
         </div>
         
-         <div>
-        <Alert
-          isOpen={this.state.alertMsg}
-          toggle={this.alertMsgClose}
-          color="success">
-          Message sent successfully. We will get back to you!
-        </Alert>
-    </div>
-       
-    </Form>
+        <div>
+                  </div> 
+      </Form>
+        {!this.state.isHidden && <div className="alert alert-success"> Message has been sent!  </div> }
     </div>
     );
   }

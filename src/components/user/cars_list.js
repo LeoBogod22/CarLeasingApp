@@ -56,132 +56,131 @@ CarsRef.on('value', snap => {
       carList = <div className="TaskList-empty">Loading...</div>;
     } else {
     
-      carList = (
-      
-        <ul className="TaskList">
-          {Cars.map(car => (
-            <div>
-              <Row>
-                <Col md="12">
-                  <div className="card border-secondary mb-3">
-                    <div className="card-header text-success">
-                      <h4>
-                        <Link to={`/cars/${car.id}`}>
-                         
-                        </Link>
-                      </h4>
-                    </div>
-                    <div className="card-body">
-                      <Row>
-                        <Col md="5">
-                          <CardImg
-                            className="carlist-margin"
-                            top
-                            width="100%"
-                            src={car.link}
-                            alt={car.make}
-                          />
-                        </Col>
-                        <Col md="4">
-                          <Table className="striped">
-                            <tbody>
-                              <tr>
-                                <td>Engine:</td>
-                                <td>{car.engine}</td>
-                              </tr>
-                              <tr>
-                                <td>Drive Type:</td>
-                                <td>{car.drive_type}</td>
-                              </tr>
-                              <tr>
-                                <td>Body:</td>
-                                <td>{car.body_type}</td>
-                              </tr>
-                              <tr>
-                                <td>Exterior Color:</td>
-                                <td>{car.ext_color}</td>
-                              </tr>
-                              <tr>
-                                <td>Model:</td>
-                                <td>{car.model}</td>
-                              </tr>
-                              <tr>
-                                <td>Make:</td>
-                                <td>{car.make}</td>
-                              </tr>
-                              <tr>
-                                <td>VIN:</td>
-                                <td>{car.vin}</td>
-                              </tr>
-                            </tbody>
-                          </Table>
-                        </Col>
-                        <Col md="3">
-                          <Table className="striped">
-                            <tbody>
-                              <tr>
-                                <td className="text-primary text-right">
-                                  <strong>MSRP:</strong>
-                                </td>
-                                <td className="text-primary text-right">
-                                  <strong>${car.price}</strong>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td className="text-danger text-right">
-                                  Dealer Discount:
-                                </td>
-                                <td className="text-danger text-right">
-                                  {car.sale}%
-                                </td>
-                              </tr>
-                              <tr>
-                                <td className="text-primary text-right">
-                                  <strong>Total:</strong>
-                                </td>
-                                <td className="text-primary text-right">
-                                  <strong>
-                                    ${car.price - (car.price * car.sale) / 100}
-                                  </strong>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td className="text-primary text-right">
-                                  Est. Lease:
-                                </td>
-                                <td className="text-primary text-right">
-                                  $230/m*
-                                </td>
-                              </tr>
-                              <tr>
-                                <td className="text-primary text-right">
-                                  Est. Finance:
-                                </td>
-                                <td className="text-primary text-right">
-                                  $330/m*
-                                </td>
-                              </tr>
-                              <tr>
-                                <td className="text-right" />
-                                <td className="text-right">
-                                <Link to={{ pathname:`/cars/${car.id}`, state: { car } }} >
-                                    <Button id="crap" className="btn btn-success">
-                                      View
-                                    </Button>
-                                  </Link>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </Table>
-                        </Col>
-                      </Row>
+      carList = (      
+          <div className="container">
+            <div className="row">
+              {Cars.map(car => (
+                <div className="col-md-6 col-lg-12">
+                  <div className="row">
+                    <div className="col-12">
+                      <div className="card border-secondary mb-3">
+                        <div className="card-header text-success">
+                          <h4>
+                            <Link to={`/cars/${car.id}`}>
+                            </Link>
+                          </h4>
+                        </div>
+                        <div className="card-body">
+                          <div className="row">
+                            <div className="col-lg-5">
+                              <CardImg
+                                className="m-lg-2"
+                                top
+                                width="100%"
+                                src={car.link}
+                                alt={car.make}
+                              />
+                            </div>
+                            <div className="col-sm-6 col-md-12 col-lg-4">
+                              <Table className="striped">
+                                <tbody>
+                                  <tr>
+                                    <td className="width-140px">Engine:</td>
+                                    <td>{car.engine}</td>
+                                  </tr>
+                                  <tr>
+                                    <td className="width-140px">Drive Type:</td>
+                                    <td>{car.drive_type}</td>
+                                  </tr>
+                                  <tr>
+                                    <td className="width-140px">Body:</td>
+                                    <td>{car.body_type}</td>
+                                  </tr>
+                                  <tr>
+                                    <td className="width-140px">Exterior Color:</td>
+                                    <td>{car.ext_color}</td>
+                                  </tr>
+                                  <tr>
+                                    <td className="width-140px">Interior Color:</td>
+                                    <td>{car.int_color}</td>
+                                  </tr>
+                                  <tr>
+                                    <td className="width-140px">Transmission:</td>
+                                    <td>{car.transmission}</td>
+                                  </tr>
+                                  <tr>
+                                    <td className="width-140px">VIN:</td>
+                                    <td>{car.vin}</td>
+                                  </tr>
+                                </tbody>
+                              </Table>
+                            </div>
+                            <div className="col-sm-6 col-md-12 col-lg-3">
+                              <Table className="striped text-sm-right text-md-left text-lg-right">
+                                <tbody>
+                                  <tr>
+                                    <td className="text-primary width-140px">
+                                      <strong>MSRP:</strong>
+                                    </td>
+                                    <td className="text-primary">
+                                      <strong>${car.price}</strong>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td className="text-danger width-140px">
+                                      Dealer Discount:
+                                    </td>
+                                    <td className="text-danger">
+                                      {car.sale}%
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td className="text-primary width-140px">
+                                      <strong>Total:</strong>
+                                    </td>
+                                    <td className="text-primary">
+                                      <strong>
+                                        ${car.price - (car.price * car.sale) / 100}
+                                      </strong>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td className="text-primary width-140px">
+                                      Est. Lease:
+                                    </td>
+                                    <td className="text-primary">
+                                      $230/m*
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td className="text-primary width-140px">
+                                      Est. Finance:
+                                    </td>
+                                    <td className="text-primary">
+                                      $330/m*
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colSpan="2">
+                                      <Link to={{ pathname:`/cars/${car.id}`, state: { car } }} >
+                                        <Button className="btn btn-success btn-block">
+                                          View
+                                        </Button>
+                                      </Link>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </Table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </Col>
-              </Row>
+                </div>
+              ))}
             </div>
-          ))}
-        </ul>
+          </div>
       );
     }
 
@@ -199,4 +198,3 @@ function mapStateToProps(state, props){
 }
 
 export default connect(mapStateToProps)(CarsList)
-

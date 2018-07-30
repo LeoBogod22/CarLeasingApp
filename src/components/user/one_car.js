@@ -203,9 +203,9 @@ const images = [
                             <div className="card border-secondary mb-0">
                                 <div className="card-header text-success"><h5>Reach Us</h5></div>
                                 <div className="card-body text-primary">
-                                    <h5>Phone: (602) 362-2670</h5>
-                                    <h6>515 E Grant St,
-                                    Phoenix, AZ 85004</h6>
+                                    <h5>Phone: 1.516.765.1003</h5>
+                                    <h6>830 Willis Ave
+                                   Albertson, NY 11507</h6>
                                     <br/>
                                     {authenticated ? ( 
                                         <Button classname="btn-btn-primary" onClick={()=>this.save()}>save </Button>                      

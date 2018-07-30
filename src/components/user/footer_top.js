@@ -22,10 +22,10 @@ export default class FooterTop extends Component {
             </div>
             <div className="col-sm-6 col-md-4 col-lg-4 mt-4 mt-md-0">
               <h5>CONTACT</h5>
-              G66 Cars <br/>
-              515 E Grant St, <br/>
-              Phoenix, AZ 85004 <br/>
-              Phone: (602) 362-2670
+           Direct Motor Group <br/>
+              830 Willis Ave, <br/>
+         Albertson, NY 11507 <br/>
+              Phone: 1.516.765.1003
             </div>
           </div>
         </div>

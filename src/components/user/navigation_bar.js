@@ -79,7 +79,7 @@ app.auth().onAuthStateChanged((user) => {
           <div className="container">
             <NavbarBrand href="/">
             <Icon className="car-icon" icon={car}/>
-             G66 CARS</NavbarBrand>
+             Direct Motor Group</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>

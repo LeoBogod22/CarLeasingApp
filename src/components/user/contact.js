@@ -37,7 +37,7 @@ class ContactForm extends Component {
         console.log("Sending", this.state)
         axios({
             method: "POST", 
-            url:"https://directmotorgroup.herokuapp/send", 
+            url:"https://directmotorgroup.herokuapp.com/send", 
             data: {
                 name: name,   
                 email: email,  

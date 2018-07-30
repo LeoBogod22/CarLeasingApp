@@ -40,7 +40,6 @@ CarsRef.on('value', snap => {
       
     let carList;
           
-            console.log(Cars.year)
     if (CarsLoading) {
         carList = <div className="TaskList-empty">Loading...</div>; 
 
@@ -63,15 +62,19 @@ CarsRef.on('value', snap => {
                 <td>{car.price}</td> 
         
                 <td>
-                  <Link to={`/admin/editcar/${car.id}`}>
-                    <Icon icon={pencil} />
-                  </Link>
-
+                 
+          
                 </td>
-              
+                 <td>
+
+                 
+              </td>
+              <Link to={{ pathname:`/admin/editcar/${car.id}`, state: { car } }} >
+               <Icon icon={pencil} />
+              </Link>
               </tr>
             ))}
-      
+           
             </ul>
            );
       }

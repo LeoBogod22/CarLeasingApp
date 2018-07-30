@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
 
 
-class CarsList extends Component {
+class Searchresults extends Component {
   // ...
 
 
@@ -26,25 +26,24 @@ class CarsList extends Component {
   }
 
 
-componentDidMount(){
-    const {dispatch, match} = this.props;
-    dispatch(getCarsThunk());
-}
 
- componentWillMount() { 
 
-CarsRef.on('value', snap => {
-      const tasks = [];
-      let Cars = []
-      snap.forEach(shot => {
-       Cars.push({ ...shot.val(), key: shot.key });
-      });
+
+ componentDidMount() { 
+ 
+ 
+  
+ CarsRef.orderByChild('make') .equalTo(`${this.props.match.params.make}`).on('value', (snap) => {
+ let Cars = []
+    snap.forEach((child) => {
+   Cars.push({ ...child.val(), key: child.key });
+    });
+
       console.log(Cars);
       this.setState({ Cars: Cars, CarsLoading: false });
     });
-  }
 
-
+}
   render() {
     const { Cars, CarsLoading } = this.state;
     const orderedcars = Cars;
@@ -56,7 +55,7 @@ CarsRef.on('value', snap => {
       carList = <div className="TaskList-empty">Loading...</div>;
     } else {
     
-      carList = (      
+      carList = (
           <div className="container">
             <div className="row">
               {Cars.map(car => (
@@ -189,12 +188,4 @@ CarsRef.on('value', snap => {
 }
 
 
-function mapStateToProps(state, props){
-  return{
-    cars: state.cars,
-    messages: state.messages
-
-  }
-}
-
-export default connect(mapStateToProps)(CarsList)
+export default Searchresults;

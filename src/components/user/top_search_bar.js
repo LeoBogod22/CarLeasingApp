@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateFilter } from '../../actions/filtered';
+import { CarsRef, timeRef } from '../admin/reference';
+import Searchresults from './searchresult';
 
 
 class TopSearchBar extends Component {
@@ -12,13 +14,29 @@ class TopSearchBar extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.updateFilter(this.state);
-    this.props.history.push('/cars')
+  
+
+    this.props.history.push(`/cars2/${this.state.make}`)
 
   }
 
-  render(){
 
+
+  
+
+  render(){
+    let content = null;
+
+     if (content !==null ) {
+        <Searchresults make={this.state.make} />
+}
+
+else {
+
+  <p> h </p>
+
+}
+ 
     let searchMake = ["Audi","Honda","Lamborghini","Maserati", "Subaru","Toyota"];
 
     let cars = {
@@ -49,6 +67,8 @@ class TopSearchBar extends Component {
     }
 
     return(
+    <div>
+ <br></br> <br></br>
       <div className="top-search-bar">
         <div className="container text-align">
           <form onSubmit={this.handleSubmit}>
@@ -82,16 +102,19 @@ class TopSearchBar extends Component {
                   </select>
               </div>
               <div className="col-3">
-                  <button type="submit" className="btn btn-success btn-block" onClick={this.search}>Search</button>
+                  <button type="submit" className="btn btn-success btn-block" onClick={this.handleSubmit}>Search</button>
               </div>
             </div>
+            {content}
           </form>
+
         </div>
+      </div>
       </div>
     );
   }
 }
-
+  
 function mapStateToProps(state){
   return{
     filter: state.filter

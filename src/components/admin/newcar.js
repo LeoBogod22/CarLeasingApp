@@ -14,6 +14,8 @@ class NewCar extends Component {
     model: '',
     trim: '',
     engine: '',
+    link2: '',
+    link3:'',
     drive_type: '',
     body_type: '',
     ext_color: '',
@@ -45,12 +47,20 @@ let carid = CarsRef.push().key;
       wiper: this.state.wiper,
       sale: this.state.sale,
       headlight: this.state.headlight,
+      model: this.state.model,
+      elect_stab: this.state.elect_stab,
+      wiper: this.state.wiper,
       make: this.state.make,
+      seat: this.state.seat,
+      tire_pressure: this.state.tire_pressure,
       link: this.state.link,
       engine: this.state.engine,
+      wireless: this.state.wireless,
       transmission:this.state.transmission,
       vin:this.state.vin,
-      seat: this.state.seat, 
+      link2: this.state.link2, 
+      link3: this.state.link3,
+      keyless: this.state.keyless,
       price: this.state.price,
 ext_color: this.state.ext_color,
             checked: false,
@@ -66,14 +76,19 @@ ext_color: this.state.ext_color,
       this.setState({ body_type: '' });
       this.setState({ wiper: '' });
       this.setState({ make: '' });
+      this.setState({wireless:''});
       this.setState({link:''});
        this.setState({ headlight: '' });
        this.setState({price: ''});
        this.setState({transmission: ''});
        this.setState({engine: ''});
           this.setState({vin: ''});
+          this.setState({link2: ''});
             this.setState({ext_color: ''});
-            this.setState({sale: ''})
+            this.setState({sale: ''});
+           this.setState({keyless: ''});
+          this.setState({link3: ''});
+           this.setState({tire_pressure: ''})
     }
     this.props.history.push('/admin');
   };
@@ -116,7 +131,15 @@ ext_color: this.state.ext_color,
                       <option>Lamborghini</option>
                       <option>Maserati</option>
                       <option>Subaru</option>
+                      <option> Nissan </option>
+                      <option> Jeep </option>
+                      <option> Land Rover </option>
+                      <option> Mercedes </option>
+                      <option> Infiniti </option> 
                       <option>Toyota</option>
+                      <option>BMW </option>       <option>KIA</option>
+                      <option> Ford </option>
+                      <option> Cadillac </option> 
                     </Input>
                   </FormGroup>
                 </Col>
@@ -130,6 +153,18 @@ ext_color: this.state.ext_color,
                       <option value="" disabled selected>Select Model</option>
                       <option>Accord</option>
                       <option>Odyssey</option>
+                      <option> Qx-30</option>
+                      <option>supra</option>
+                      <option>elantra</option>
+                      <option> Disocvery Sport</option>
+                      <option>X5</option>
+                      <option> A7 </option>
+                      <option>Ghibli </option>
+                      <option> S clasS </option>
+                      <option> Maxima </option>
+                      <option> Optima </option>
+                      <option> ALtima </option>
+                        <option> Grand Charaokee </option>
                       <option>CR-V</option>
                       <option>4 Runner</option>
                       <option>Avalon</option>
@@ -137,12 +172,16 @@ ext_color: this.state.ext_color,
                       <option>C-Class</option>
                       <option>A3</option>
                       <option>Q3</option>
+                      <option>740i</option>
+                      <option> Escape</option>
                       <option>A5</option>
                       <option>Gran Turismo</option>
                       <option>Levante</option>
+                      <option> Mondeo </option>
                       <option>Aventador</option>
                       <option>Outback</option>
                       <option>Corolla</option>
+                            <option>Camry</option>
                     </Input>
                   </FormGroup>
                 </Col>
@@ -291,19 +330,19 @@ ext_color: this.state.ext_color,
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="split">Split folding rear seat</Label>
+                    <Label for="split">Image two</Label>
                     <Input type="text" id="split"
-                      value={this.state.seat}
-                      onChange={(e) => this.setState({seat: e.target.value})}
+                      value={this.state.link2}
+                      onChange={(e) => this.setState({link2: e.target.value})}
                     />
                   </FormGroup>
                 </Col>
                 <Col md="3">
                   <FormGroup>
-                    <Label for="remote">Remote keyless entry</Label>
+                    <Label for="remote">img link3</Label>
                     <Input type="text" id="remote"
-                      value={this.state.keyless}
-                      onChange={(e) => this.setState({keyless: e.target.value})}
+                      value={this.state.link3}
+                      onChange={(e) => this.setState({link3: e.target.value})}
                     />
                   </FormGroup>
                 </Col>

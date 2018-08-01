@@ -5,6 +5,8 @@ const creds = require('../mailer/config/index');
 
 var transport = {
   host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
   auth: {
     user: creds.USER,
     pass: creds.PASS
@@ -20,7 +22,7 @@ transporter.verify((error, success) => {
     console.log('Server is ready to take messages');
   }
 });
-router.post('/send', (req, res, next) => {
+router.post('/api/send', (req, res, next) => {
   console.log("Request received", req.body)
   var name = req.body.name;
   var email = req.body.email; 
@@ -39,7 +41,7 @@ router.post('/send', (req, res, next) => {
   transporter.sendMail(mail, (err, data) => {
     if (err) {
       res.json({
-        msg: 'fail'
+        msg: 'fail '+ err.message
       })
     } else {
       res.json({
@@ -48,5 +50,14 @@ router.post('/send', (req, res, next) => {
     }
   })
 })
+
+if (process.env.NODE_ENV === 'production') {
+    // Serve any static files
+    app.use(express.static(path.join(__dirname, 'client/build')));
+    // Handle React routing, return all requests to React app
+    app.get('*', function(req, res) {
+        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
+}
 
 module.exports = router;

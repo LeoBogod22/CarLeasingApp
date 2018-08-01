@@ -1,22 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "express-app",
-  "version": "1.0.0",
-  "scripts": {
-    "client": "cd client && yarn start",
-    "server": "nodemon server.js --ignore client",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
-  },
-  "dependencies": {
-    "express": "^4.16.2"
-  },
-  "devDependencies": {
-    "concurrently": "^3.5.0"
-  }
-}
-=======
   "name": "g66-car-dealer",
   "version": "0.1.0",
   "private": true,
@@ -50,6 +32,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "proxy": {
+      "/api": {
+        "target": "http://localhost:4000",
+        "secure": false
+      }
   }
 }
->>>>>>> 8df72867fa6c2f26cf03d7c715d42b8b06195ee6

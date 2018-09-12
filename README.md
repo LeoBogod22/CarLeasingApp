@@ -7,6 +7,8 @@ This App will be used by both dealer and potential customers.
 ## Outputs from g66 Car Dealership Web App
 Outputs for users
   * Browse cars by Year
+   * Save Cars 
+   * See gallery of photos
   * Browse cars by Make
   * Browse cars by Body Type
   * Browse cars by Price Range
@@ -48,10 +50,9 @@ Front End
 Backend
   * Node.js
   * Express.js
-  * Knex.js
+  * Firenase.js
   * Postgresql
-  * Bookshelf.js
-  * AWS - S3
+  
 
 ## Feature list
 User

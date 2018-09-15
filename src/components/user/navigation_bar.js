@@ -25,6 +25,7 @@ export default class NavigatioBar extends React.Component {
      authenticated: false,
       currentUser: null,
        redirect: false,
+        email: '',
  
     
       isOpen: false
@@ -49,13 +50,21 @@ export default class NavigatioBar extends React.Component {
 
 }
 
+
+
+
 componentWillMount() {
+
 app.auth().onAuthStateChanged((user) => {
      
  
+     
+ 
     if (user) {
+
       this.setState({
         currentUser: user,
+        email: user.email,
         authenticated: true
       })
     } else {
@@ -95,26 +104,43 @@ app.auth().onAuthStateChanged((user) => {
                 <NavItem>
                   <NavLink href="/">HOME</NavLink>
                 </NavItem>
+
+
+                   {authenticated ? ( 
+                   
+                        
+                   <NavItem>
+
+                        <NavLink href='/chat'>CHAT</NavLink></NavItem>
+                
+                    ) : (
+                         <p></p>
+                    )}
+
+
                 <UncontrolledDropdown nav>
                   <DropdownToggle nav caret>
-                    ABOUT
+                    MENU
                   </DropdownToggle>
                      
                   <DropdownMenu >
                     {authenticated ? ( 
                     <DropdownItem>
                         <Button className="btn-btn-primary btn-block" onClick={this.signout}>Sign Out </Button>
+                        <Link to='/chat' className="dropdown-item"> CHAT </Link>
                     </DropdownItem>
                     ) : (
                          <Link to="/login" className="dropdown-item"> Login </Link> 
                     )}
                     {authenticated ? ( 
-                        <Link to="/user" className="dropdown-item"> my profile </Link>
+                         <DropdownItem><Link to="/user"> My Profile </Link> </DropdownItem>
+                     
+                     
                     ) : (
                          <Link to="/signup" className="dropdown-item"> Sign Up </Link> 
                     )}
                     <DropdownItem>
-                      ABOUT US
+                      MENU
                     </DropdownItem>
                     
                     <Link to="/contact"> <DropdownItem>

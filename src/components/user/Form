@@ -1,0 +1,105 @@
+import React, { Component } from 'react';
+import app from "../config/dev";
+import Message from './Message';
+import { messageRef, timeRef } from './references';
+
+
+export default class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userName: 'Sample@gmail.com',
+      message: '',
+      Carsloading: true,
+      list: [],
+      authenticated: false,
+      currentUser: null,
+      redirect: false,
+      email: '',
+    };
+    this.listenMessages();
+    this.handleSend = this.handleSend.bind(this);
+  }
+
+  componentWillMount() {
+
+    app.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          currentUser: user,
+          userName: user.email,
+          authenticated: true
+        })
+      }
+    });
+  }
+
+  handleChange(event) {
+    this.setState({message: event.target.value});
+  }
+  handleSend() {
+    if (this.state.message) {
+      var newItem = {
+        userName: this.state.userName,
+        message: this.state.message,
+      }
+      messageRef.push(newItem);
+      this.setState({ message: '' });
+      this.setState({userName: this.state.userName})
+    }
+  }
+  handleKeyPress(event) {
+    if (event.key !== 'Enter') return;
+    this.handleSend();
+  }
+  listenMessages() {
+    
+    messageRef.on('value', snap => {
+      const tasks = [];
+      let list = []
+      snap.forEach(shot => {
+       list.push({ ...shot.val(), key: shot.key });
+      });
+      list = list.slice(-10)
+      this.setState({ list: list, CarsLoading: false });
+    });
+  }
+
+  render() {
+    let carList;
+    const { list, CarsLoading } = this.state;
+    if (list.length){
+      carList = (
+        <ul>{ list.map((item, index, userName) =>
+              <Message key={index} message={item} UserName={this.state.UserName} />
+          )}
+        </ul>
+      );
+    }
+    return (
+      <div className="form">
+        <div className="form__message">
+          {carList}
+        </div>
+        <div className="form__row">
+          <input
+            id="form-control"
+            type="text"
+            placeholder="Type message"
+            value={this.state.message}
+            onChange={this.handleChange.bind(this)}
+            onKeyPress={this.handleKeyPress.bind(this)}
+          />
+          <div className="text-center">
+            <button
+              id="btn-gradient2"
+              onClick={this.handleSend}
+            >
+              send
+              </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}

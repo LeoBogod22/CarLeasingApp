@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import audiA3 from '../../assets/images/audiA3.jpg'
+import lambo from '../../assets/images/lambo.jpg'
+import camry from '../../assets/images/camry.jpg'
 import {
   Carousel,
   CarouselItem,
@@ -28,18 +31,18 @@ class JumboTron extends Component {
     {
       this.carouselImages = [
       {
-        src: 'https://s3.amazonaws.com/cartool/background.jpg',
+        src: audiA3,
         altText: 'Audi A3',
         caption: 'Checkout Christmas Sale'
       },
       {
-        src: 'https://s3.amazonaws.com/cartool/lam_bg.jpg',
+        src: lambo,
         altText: 'Lamborghini',
         caption: 'Aventador SV Roadster'
       },
       {
-        src: 'https://s3.amazonaws.com/cartool/camry_bg.jpg',
-        altText: '',
+        src: camry,
+        altText: 'Camry',
         caption: '2018 Camry'
       }
       ];

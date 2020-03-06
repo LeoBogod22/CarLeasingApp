@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "express-app",
   "version": "1.0.0",
   "scripts": {
@@ -9,17 +8,6 @@
     "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
-  "dependencies": {
-    "express": "^4.16.2"
-  },
-  "devDependencies": {
-    "concurrently": "^3.5.0"
-  }
-}
-=======
-  "name": "g66-car-dealer",
-  "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "axios": "^0.17.1",
     "body-parser": "^1.18.3",
@@ -45,11 +33,7 @@
     "serve-favicon": "^2.5.0",
     "trim": "0.0.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "concurrently": "^3.5.0"
   }
 }
->>>>>>> 8df72867fa6c2f26cf03d7c715d42b8b06195ee6

@@ -1,7 +1,9 @@
 {
   "name": "express-app",
   "version": "1.0.0",
-  "node_version": "10.15.3",
+  "engines": {
+    "node": "12.13.0"
+  },
   "scripts": {
     "client": "cd client && yarn start",
     "server": "nodemon server.js --ignore client",

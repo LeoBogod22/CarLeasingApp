@@ -1,8 +1,9 @@
 {
   "name": "express-app",
   "version": "1.0.0",
+  "license": "MIT",
   "engines": {
-    "node": "12.13.0"
+    "node": "12.16.1"
   },
   "scripts": {
     "client": "cd client && yarn start",

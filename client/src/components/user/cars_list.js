@@ -56,6 +56,8 @@ CarsRef.on('value', snap => {
       carList = <div className="TaskList-empty">Loading...</div>;
     } else {
     
+      console.log(Cars);
+
       carList = (      
           <div className="container">
             <div className="row">
@@ -77,7 +79,7 @@ CarsRef.on('value', snap => {
                                 className="m-lg-2"
                                 top
                                 width="100%"
-                                src={car.link}
+                                src={car.link || car.link2 || car.link3}
                                 alt={car.make}
                               />
                             </div>

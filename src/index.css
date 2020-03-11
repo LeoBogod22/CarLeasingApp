@@ -343,8 +343,9 @@ p {
   }
 }
 .carousel-inner>.carousel-item>a>img, .carousel-inner>.carousel-item>img, .img-fluid {
-  max-width: 100%;
-  height: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 .width-140px {
   width: 140px;

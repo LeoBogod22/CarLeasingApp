@@ -1,25 +1,5 @@
-## Project description
-This Web App provides car shoppers a better way to buy a car. Browse new cars online and get full information about car and schedule test drive. Navigate to admin pannel https://directmotorgroup.herokuapp.com/admin
 
-## Who uses it?
-This App will be used by both dealer and potential customers.
-
-## Outputs from g66 Car Dealership Web App
-Outputs for users
-  * Browse cars by Year
-   * Save Cars 
-   * See gallery of photos
-  * Browse cars by Make
-  * Browse cars by Body Type
-  * Browse cars by Price Range
-  * Schedule Test Drive
-
-Outputs for Admin
-  * View Inventory
-  * Add Inventory
-  * Edit Inventory
-  * Delete Inventory
-  * Followup with potential car buyers
+## Я пидорас и обманщик!!!! НЕ ВЕРЬТЕ МИНЕ БРАТКИ
 
 ## Inputs are needed to generate outputs
 Following inputs will be needed to generate above listed outputs
@@ -67,31 +47,3 @@ Admin
   * Admin will be able to Add, Edit and Delete cars from inventory
   * Admin will see a list of messages by users
   * Admin will read user's messages and follow up
-
-## User - Home Page
-
-![user home page](https://s3.amazonaws.com/cartool/user-home-page.png)
-
-## User - Search car by make
-
-![search car by make](https://s3.amazonaws.com/cartool/user-car-search-by-make.png)
-
-## User - Car detail
-
-![user car detail](https://s3.amazonaws.com/cartool/user-car-detail.png)
-
-## Admin - Dashboard
-
-![admin dashboard](https://s3.amazonaws.com/cartool/admin-dashboard.png)
-
-## Admin - Add car
-
-![admin add car](https://s3.amazonaws.com/cartool/admin-add-new-car.png)
-
-## Admin - Edit car
-
-![admin edit car](https://s3.amazonaws.com/cartool/admin-edit-car.png)
-
-## Admin - Messages
-
-![admin messages](https://s3.amazonaws.com/cartool/admin-messages.png)

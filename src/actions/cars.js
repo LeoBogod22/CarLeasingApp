@@ -75,6 +75,7 @@ export const createCar = (newCar) => {
     })
   }
 }
+<<<<<<< HEAD
 
 
 
@@ -130,3 +131,5 @@ export const deleteCar = (carId) => {
     })
   }
 }
+=======
+>>>>>>> parent of 0453b9b... working on edit car

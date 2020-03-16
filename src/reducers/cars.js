@@ -2,6 +2,7 @@ import {
   GET_CARS_PENDING,
   GET_CARS_SUCCESS,
   ADD_CAR_PENDING,
+<<<<<<< HEAD
   ADD_CAR_SUCCESS,
   GET_SINGLE_CAR,
   EDIT_CAR_PENDING,
@@ -68,6 +69,23 @@ function Reducer (state = initialState, action) {
    }
   default:
    return state
+=======
+  ADD_CAR_SUCCESS
+} from '../actions/cars'
+
+export default (state = [], action) => {
+  switch (action.type) {
+    case GET_CARS_PENDING:
+      return state;
+    case GET_CARS_SUCCESS:
+      return [...action.payload.data]
+    case ADD_CAR_PENDING:
+      return state;
+    case ADD_CAR_SUCCESS:
+      return [...action.payload.data]
+    default:
+      return state;
+>>>>>>> parent of 0453b9b... working on edit car
   }
 }
 export default Reducer;

@@ -5,6 +5,7 @@ import { deleteCar } from '../../actions/cars';
 import Icon from 'react-icons-kit';
 import { bin } from 'react-icons-kit/icomoon';
 import { pencil } from 'react-icons-kit/icomoon';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 import TotalMessage from './total_messages';
 import TotalInventory from './total_inventory';
@@ -107,6 +108,14 @@ class Cars extends Component {
             </div>
           </div>
 =======
+=======
+
+class Cars extends Component {
+  render(){
+
+    console.log('admin dashboard: ', this.props.cars);
+
+>>>>>>> parent of 0453b9b... working on edit car
     let inventory = this.props.cars ? this.props.cars.map(car => {
       return(
         <tr>
@@ -118,6 +127,7 @@ class Cars extends Component {
           <td>{car.int_color}</td>
           <td>{car.price}</td>
           <td>{car.status ? "Available" : "Sold"}</td>
+<<<<<<< HEAD
           <td>
             <Link to={`/admin/editcar/${car.id}`}>
               <Icon icon={pencil} />
@@ -128,6 +138,10 @@ class Cars extends Component {
             icon={bin}
             onClick={(e)=>this.handleDelete(car.id)}
           /></td>
+=======
+          <td><Icon icon={pencil} /></td>
+          <td><Icon icon={bin} /></td>
+>>>>>>> parent of 0453b9b... working on edit car
         </tr>
       )
     }) : null;

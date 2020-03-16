@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import newCar from '../../assets/images/new_car.webp'
-import finance from '../../assets/images/finance.jpg'
-import testDrive from '../../assets/images/test-drive.jpg'
 import { Card, CardImg, CardBody,
   CardTitle, Button } from 'reactstrap';
 import { Link } from 'react-router-dom'
@@ -63,7 +60,7 @@ this.setState({info2:"" , msg:"more"})
   <div className="row">
     <div className="card-deck">
       <div className="card">
-        <img  id="f" className="card-img-top" src={newCar} alt="Card image cap"/>
+        <img  id="f" className="card-img-top" src="https://s3.amazonaws.com/cartool/new_car.jpg" alt="Card image cap"/>
         <div className="card-block">
           <h4 className="card-title">Find New Vehicle</h4>
           <p className="card-text">Over 1000 Vehicles available!</p>
@@ -71,7 +68,7 @@ this.setState({info2:"" , msg:"more"})
         </div>
       </div>
       <div className="card">
-        <img  id="f"className="card-img-top" src={finance} alt="Card image cap"/>
+        <img  id="f"className="card-img-top" src="https://s3.amazonaws.com/cartool/finance.jpg" alt="Card image cap"/>
         <div className="card-block">
           <h4 className="card-title">Financing</h4>
           <p className="card-text">We Help with  getting loans and have the best rates! </p>
@@ -80,7 +77,7 @@ this.setState({info2:"" , msg:"more"})
         </div>
       </div>
       <div className="card">
-        <img id="f" className="card-img-top" src={testDrive} alt="Test Drive"/>
+        <img id="f" className="card-img-top" src="https://s3.amazonaws.com/cartool/test_drive.jpg" alt="Test Drive"/>
         <div className="card-block">
           <h4 className="card-title">Schedule Test Drive</h4>
           <p className="card-text">Test drive availalbe 5 days a week ! Feel free to shcedule one now! </p>

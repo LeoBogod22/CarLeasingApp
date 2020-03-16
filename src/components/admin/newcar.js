@@ -33,17 +33,15 @@ class NewCar extends Component {
   	trip_comp: '',
   	tire_pressure: '',
   	wiper: '',
-    id: '',
   	headlight: '',
     alertMsg: false
   }
 
  onSubmit = (e) => {
     e.preventDefault();
-let carid = CarsRef.push().key;
    const NewCar= {
-    id: carid,
       body_type: this.state.body_type.trim(),
+<<<<<<< HEAD
       wiper: this.state.wiper,
       sale: this.state.sale,
       headlight: this.state.headlight,
@@ -64,16 +62,18 @@ let carid = CarsRef.push().key;
       price: this.state.price,
 ext_color: this.state.ext_color,
             checked: false,
+=======
+      checked: false,
+>>>>>>> parent of 67c49d0... ldld
       starred: false,
       timestamp: timeRef
-
-          
     };
   
 
   if (NewCar.body_type.length) {
-     CarsRef.child(carid).set(NewCar);
+      CarsRef.push(NewCar);
       this.setState({ body_type: '' });
+<<<<<<< HEAD
       this.setState({ wiper: '' });
       this.setState({ make: '' });
       this.setState({wireless:''});
@@ -89,8 +89,9 @@ ext_color: this.state.ext_color,
            this.setState({keyless: ''});
           this.setState({link3: ''});
            this.setState({tire_pressure: ''})
+=======
+>>>>>>> parent of 67c49d0... ldld
     }
-    this.props.history.push('/admin');
   };
   alertMsgClose = () => {
     this.setState({ alertMsg: false });
@@ -180,8 +181,11 @@ ext_color: this.state.ext_color,
                       <option> Mondeo </option>
                       <option>Aventador</option>
                       <option>Outback</option>
+<<<<<<< HEAD
                       <option>Corolla</option>
                             <option>Camry</option>
+=======
+>>>>>>> parent of 67c49d0... ldld
                     </Input>
                   </FormGroup>
                 </Col>
@@ -402,7 +406,7 @@ ext_color: this.state.ext_color,
                 <Col md="1">
                <form onSubmit={this.onSubmit}>
  
-
+    <form type="text" className="form-control"/>
     <Button className="btn btn-primary btn-large centerButton" type="submit">Save</Button>
     </form>
                 </Col>

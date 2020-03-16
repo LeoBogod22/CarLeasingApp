@@ -19,5 +19,3 @@ export const authRef = firebase.auth();
 export const provider = new firebase.auth.GoogleAuthProvider();
 
 export const timeRef = firebase.database.ServerValue.TIMESTAMP;
-
-export default databaseRef;

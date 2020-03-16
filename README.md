@@ -1,9 +1,6 @@
 ## Project description
-<<<<<<< HEAD
 This Web App provides car shoppers a better way to buy a car. Browse new cars online and get full information about car and schedule test drive. Navigate to admin pannel https://directmotorgroup.herokuapp.com/admin
-=======
 g66 Car Dealership Web App provides car shoppers a better way to buy a car. Browse new cars online and get full information about car and schedule test drive.
->>>>>>> parent of 59d70b0... readme file updated
 
 ## Who uses it?
 g66 Car Dealership Web App will be used by both dealer and potential customers.
